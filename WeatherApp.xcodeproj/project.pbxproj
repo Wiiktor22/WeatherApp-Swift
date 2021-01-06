@@ -14,6 +14,8 @@
 		CD9C45E425A5FA6E00706C49 /* WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45E225A5FA6E00706C49 /* WeatherApp.xcdatamodeld */; };
 		CD9C45E625A5FA6F00706C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9C45E525A5FA6F00706C49 /* Assets.xcassets */; };
 		CD9C45E925A5FA6F00706C49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9C45E725A5FA6F00706C49 /* LaunchScreen.storyboard */; };
+		CD9C45F525A5FD7A00706C49 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD9C45F425A5FD7A00706C49 /* Montserrat-Light.ttf */; };
+		CD9C45F825A5FD8400706C49 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD9C45F725A5FD8400706C49 /* Montserrat-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CD9C45E525A5FA6F00706C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD9C45E825A5FA6F00706C49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD9C45EA25A5FA6F00706C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD9C45F425A5FD7A00706C49 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		CD9C45F725A5FD8400706C49 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		CD9C45D825A5FA6E00706C49 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				CD9C45F225A5FD5F00706C49 /* Fonts */,
 				CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */,
 				CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */,
 				CD9C45DD25A5FA6E00706C49 /* ViewController.swift */,
@@ -68,6 +73,15 @@
 				CD9C45E225A5FA6E00706C49 /* WeatherApp.xcdatamodeld */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		CD9C45F225A5FD5F00706C49 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CD9C45F425A5FD7A00706C49 /* Montserrat-Light.ttf */,
+				CD9C45F725A5FD8400706C49 /* Montserrat-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +141,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9C45F525A5FD7A00706C49 /* Montserrat-Light.ttf in Resources */,
+				CD9C45F825A5FD8400706C49 /* Montserrat-Medium.ttf in Resources */,
 				CD9C45E925A5FA6F00706C49 /* LaunchScreen.storyboard in Resources */,
 				CD9C45E625A5FA6F00706C49 /* Assets.xcassets in Resources */,
 				CD9C45E125A5FA6E00706C49 /* Main.storyboard in Resources */,
