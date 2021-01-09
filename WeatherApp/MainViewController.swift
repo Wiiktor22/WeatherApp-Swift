@@ -8,14 +8,34 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    @IBOutlet var todayDetailsContainer: UIView!
+    @IBOutlet var weeklyDetailsContainer: UIView!
+    var subviews = [UIView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureDetailsSubviews()
     }
     
-
+    func configureDetailsSubviews() {
+        subviews = [todayDetailsContainer, weeklyDetailsContainer]
+        hideAllSubviews()
+        subviews[0].isHidden = false
+    }
+    
+    func hideAllSubviews() {
+        for subview in subviews {
+            subview.isHidden = true
+        }
+    }
+    
+    @IBAction func didDetailsSegmentChange(_ sender: UISegmentedControl) {
+        hideAllSubviews()
+        print(sender.selectedSegmentIndex)
+        subviews[sender.selectedSegmentIndex].isHidden = false
+    }
+    
     /*
     // MARK: - Navigation
 

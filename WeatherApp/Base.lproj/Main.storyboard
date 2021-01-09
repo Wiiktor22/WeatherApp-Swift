@@ -48,7 +48,7 @@
         <scene sceneID="EqH-7J-yNw">
             <objects>
                 <viewController storyboardIdentifier="MainView" id="Suv-u5-D1r" customClass="MainViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zyc-AD-783" customClass="MainView">
+                    <view key="view" contentMode="scaleToFill" id="Zyc-AD-783">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -127,50 +127,69 @@
                                     <constraint firstAttribute="height" constant="250" id="QFe-kS-RdT"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-VU-u3S" userLabel="Switcher Container">
-                                <rect key="frame" x="0.0" y="344" width="414" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FR9-9Y-LOq" userLabel="DetailsContainer">
+                                <rect key="frame" x="0.0" y="344" width="414" height="552"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rzU-cG-i1j">
-                                        <rect key="frame" x="139.5" y="9.5" width="135" height="32"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Ym-cR-jdf">
+                                        <rect key="frame" x="139.5" y="15" width="135" height="36"/>
                                         <segments>
                                             <segment title="Dzień"/>
                                             <segment title="Tydzień"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="didDetailsSegmentChange:" destination="Suv-u5-D1r" eventType="valueChanged" id="BFz-Mp-hpZ"/>
+                                        </connections>
                                     </segmentedControl>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqx-cl-mcz">
+                                        <rect key="frame" x="0.0" y="70" width="414" height="482"/>
+                                        <connections>
+                                            <segue destination="5Ih-ah-lDy" kind="embed" id="G7X-en-nQE"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l94-Ov-I86">
+                                        <rect key="frame" x="0.0" y="70" width="414" height="482"/>
+                                        <connections>
+                                            <segue destination="vZG-oR-qcQ" kind="embed" id="Aw2-yl-MbF"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="rzU-cG-i1j" firstAttribute="centerY" secondItem="Kas-VU-u3S" secondAttribute="centerY" id="C92-3b-sfK"/>
-                                    <constraint firstItem="rzU-cG-i1j" firstAttribute="centerX" secondItem="Kas-VU-u3S" secondAttribute="centerX" id="f5W-J3-tCp"/>
-                                    <constraint firstAttribute="height" constant="50" id="jjb-Te-rFy"/>
+                                    <constraint firstItem="l94-Ov-I86" firstAttribute="top" secondItem="FR9-9Y-LOq" secondAttribute="top" constant="70" id="2ll-d5-Yuc"/>
+                                    <constraint firstItem="3Ym-cR-jdf" firstAttribute="centerX" secondItem="FR9-9Y-LOq" secondAttribute="centerX" id="84f-LS-FHG"/>
+                                    <constraint firstItem="Jqx-cl-mcz" firstAttribute="top" secondItem="3Ym-cR-jdf" secondAttribute="bottom" constant="20" id="D2Y-9x-tKi"/>
+                                    <constraint firstItem="Jqx-cl-mcz" firstAttribute="leading" secondItem="FR9-9Y-LOq" secondAttribute="leading" id="Heh-xl-1VW"/>
+                                    <constraint firstAttribute="bottom" secondItem="l94-Ov-I86" secondAttribute="bottom" id="KFN-Jo-L0q"/>
+                                    <constraint firstAttribute="trailing" secondItem="l94-Ov-I86" secondAttribute="trailing" id="P1T-o4-ypo"/>
+                                    <constraint firstItem="Jqx-cl-mcz" firstAttribute="top" secondItem="FR9-9Y-LOq" secondAttribute="top" constant="70" id="Vye-fp-crc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jqx-cl-mcz" secondAttribute="bottom" id="WZ2-JO-9jJ"/>
+                                    <constraint firstItem="Jqx-cl-mcz" firstAttribute="top" secondItem="3Ym-cR-jdf" secondAttribute="bottom" constant="20" id="ar1-PZ-Tjw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jqx-cl-mcz" secondAttribute="trailing" id="ib4-cO-tHy"/>
+                                    <constraint firstItem="l94-Ov-I86" firstAttribute="leading" secondItem="FR9-9Y-LOq" secondAttribute="leading" id="pkY-gZ-53k"/>
+                                    <constraint firstItem="3Ym-cR-jdf" firstAttribute="top" secondItem="FR9-9Y-LOq" secondAttribute="top" constant="15" id="xIp-6t-mPL"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIS-q4-ney">
-                                <rect key="frame" x="0.0" y="394" width="414" height="502"/>
-                                <connections>
-                                    <segue destination="7xX-Bv-Avf" kind="embed" id="2yP-kd-KCx"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hvw-E8-zCL"/>
                         <color key="backgroundColor" red="0.18431372549019609" green="0.53725490196078429" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Hvw-E8-zCL" firstAttribute="trailing" secondItem="CgF-6A-KEW" secondAttribute="trailing" id="7YE-OP-Sha"/>
-                            <constraint firstItem="qIS-q4-ney" firstAttribute="leading" secondItem="Zyc-AD-783" secondAttribute="leading" id="Nxc-bD-Hzu"/>
-                            <constraint firstAttribute="bottom" secondItem="qIS-q4-ney" secondAttribute="bottom" id="Z2p-kf-Xh5"/>
                             <constraint firstItem="xsE-sE-uir" firstAttribute="top" secondItem="CgF-6A-KEW" secondAttribute="bottom" id="cBg-Zd-fhK"/>
                             <constraint firstItem="CgF-6A-KEW" firstAttribute="top" secondItem="Hvw-E8-zCL" secondAttribute="top" id="cGN-yG-O3g"/>
-                            <constraint firstItem="Hvw-E8-zCL" firstAttribute="trailing" secondItem="Kas-VU-u3S" secondAttribute="trailing" id="eKU-fN-l0u"/>
                             <constraint firstItem="xsE-sE-uir" firstAttribute="centerX" secondItem="Zyc-AD-783" secondAttribute="centerX" id="eM5-Qi-79x"/>
+                            <constraint firstItem="FR9-9Y-LOq" firstAttribute="leading" secondItem="xsE-sE-uir" secondAttribute="leading" id="fEO-ZS-1UP"/>
+                            <constraint firstItem="FR9-9Y-LOq" firstAttribute="top" secondItem="xsE-sE-uir" secondAttribute="bottom" id="fJX-d9-x6w"/>
+                            <constraint firstAttribute="bottom" secondItem="FR9-9Y-LOq" secondAttribute="bottom" id="fNP-Ce-xBh"/>
                             <constraint firstItem="xsE-sE-uir" firstAttribute="leading" secondItem="Hvw-E8-zCL" secondAttribute="leading" id="geo-yt-E1G"/>
-                            <constraint firstItem="Kas-VU-u3S" firstAttribute="top" secondItem="xsE-sE-uir" secondAttribute="bottom" id="ndD-ci-23r"/>
-                            <constraint firstItem="Kas-VU-u3S" firstAttribute="leading" secondItem="Hvw-E8-zCL" secondAttribute="leading" id="sOq-vJ-Qjz"/>
-                            <constraint firstItem="qIS-q4-ney" firstAttribute="top" secondItem="xsE-sE-uir" secondAttribute="bottom" constant="50" id="vIe-0j-Ei8"/>
+                            <constraint firstItem="FR9-9Y-LOq" firstAttribute="trailing" secondItem="xsE-sE-uir" secondAttribute="trailing" id="qb5-6o-6SU"/>
                             <constraint firstItem="Hvw-E8-zCL" firstAttribute="trailing" secondItem="xsE-sE-uir" secondAttribute="trailing" id="wBt-Sh-obo"/>
                             <constraint firstItem="CgF-6A-KEW" firstAttribute="leading" secondItem="Hvw-E8-zCL" secondAttribute="leading" id="wXF-VN-uoe"/>
-                            <constraint firstAttribute="trailing" secondItem="qIS-q4-ney" secondAttribute="trailing" id="zI5-60-PLd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="todayDetailsContainer" destination="Jqx-cl-mcz" id="VXQ-mM-yez"/>
+                        <outlet property="weeklyDetailsContainer" destination="l94-Ov-I86" id="ywV-bG-vLk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ4-Q6-NcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,19 +212,33 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="I67-Sr-FSt">
+        <!--Today Details View Controller-->
+        <scene sceneID="jtF-Ch-DCH">
             <objects>
-                <viewController id="7xX-Bv-Avf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="b8e-Rf-1yG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="502"/>
+                <viewController id="5Ih-ah-lDy" customClass="TodayDetailsViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ssq-Uf-aAn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="482"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xQv-fa-fyY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vzp-3X-FNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="119"/>
+            <point key="canvasLocation" x="1375" y="794"/>
+        </scene>
+        <!--Weekly Details View Controller-->
+        <scene sceneID="jAt-q7-hIS">
+            <objects>
+                <viewController id="vZG-oR-qcQ" customClass="WeeklyDetailsViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FMd-io-3Dk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="482"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZUB-oG-Qxp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2426" y="794"/>
         </scene>
     </scenes>
     <resources>

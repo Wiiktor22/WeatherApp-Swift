@@ -17,6 +17,8 @@
 		CD9C45F525A5FD7A00706C49 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD9C45F425A5FD7A00706C49 /* Montserrat-Light.ttf */; };
 		CD9C45F825A5FD8400706C49 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD9C45F725A5FD8400706C49 /* Montserrat-Medium.ttf */; };
 		CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45FA25A6003C00706C49 /* MainViewController.swift */; };
+		CDA6CE6C25A9FFED00098611 /* TodayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */; };
+		CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		CD9C45F425A5FD7A00706C49 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		CD9C45F725A5FD8400706C49 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		CD9C45FA25A6003C00706C49 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailsViewController.swift; sourceTree = "<group>"; };
+		CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				CD9C45DD25A5FA6E00706C49 /* ViewController.swift */,
 				CD9C45FA25A6003C00706C49 /* MainViewController.swift */,
 				CD9C45DF25A5FA6E00706C49 /* Main.storyboard */,
+				CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */,
+				CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */,
 				CD9C45E525A5FA6F00706C49 /* Assets.xcassets */,
 				CD9C45E725A5FA6F00706C49 /* LaunchScreen.storyboard */,
 				CD9C45EA25A5FA6F00706C49 /* Info.plist */,
@@ -164,6 +170,8 @@
 				CD9C45DA25A5FA6E00706C49 /* AppDelegate.swift in Sources */,
 				CD9C45DC25A5FA6E00706C49 /* SceneDelegate.swift in Sources */,
 				CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */,
+				CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */,
+				CDA6CE6C25A9FFED00098611 /* TodayDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
