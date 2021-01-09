@@ -127,17 +127,48 @@
                                     <constraint firstAttribute="height" constant="250" id="QFe-kS-RdT"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-VU-u3S" userLabel="Switcher Container">
+                                <rect key="frame" x="0.0" y="344" width="414" height="50"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rzU-cG-i1j">
+                                        <rect key="frame" x="139.5" y="9.5" width="135" height="32"/>
+                                        <segments>
+                                            <segment title="Dzień"/>
+                                            <segment title="Tydzień"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="rzU-cG-i1j" firstAttribute="centerY" secondItem="Kas-VU-u3S" secondAttribute="centerY" id="C92-3b-sfK"/>
+                                    <constraint firstItem="rzU-cG-i1j" firstAttribute="centerX" secondItem="Kas-VU-u3S" secondAttribute="centerX" id="f5W-J3-tCp"/>
+                                    <constraint firstAttribute="height" constant="50" id="jjb-Te-rFy"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIS-q4-ney">
+                                <rect key="frame" x="0.0" y="394" width="414" height="502"/>
+                                <connections>
+                                    <segue destination="7xX-Bv-Avf" kind="embed" id="2yP-kd-KCx"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hvw-E8-zCL"/>
                         <color key="backgroundColor" red="0.18431372549019609" green="0.53725490196078429" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Hvw-E8-zCL" firstAttribute="trailing" secondItem="CgF-6A-KEW" secondAttribute="trailing" id="7YE-OP-Sha"/>
+                            <constraint firstItem="qIS-q4-ney" firstAttribute="leading" secondItem="Zyc-AD-783" secondAttribute="leading" id="Nxc-bD-Hzu"/>
+                            <constraint firstAttribute="bottom" secondItem="qIS-q4-ney" secondAttribute="bottom" id="Z2p-kf-Xh5"/>
                             <constraint firstItem="xsE-sE-uir" firstAttribute="top" secondItem="CgF-6A-KEW" secondAttribute="bottom" id="cBg-Zd-fhK"/>
                             <constraint firstItem="CgF-6A-KEW" firstAttribute="top" secondItem="Hvw-E8-zCL" secondAttribute="top" id="cGN-yG-O3g"/>
+                            <constraint firstItem="Hvw-E8-zCL" firstAttribute="trailing" secondItem="Kas-VU-u3S" secondAttribute="trailing" id="eKU-fN-l0u"/>
                             <constraint firstItem="xsE-sE-uir" firstAttribute="centerX" secondItem="Zyc-AD-783" secondAttribute="centerX" id="eM5-Qi-79x"/>
                             <constraint firstItem="xsE-sE-uir" firstAttribute="leading" secondItem="Hvw-E8-zCL" secondAttribute="leading" id="geo-yt-E1G"/>
+                            <constraint firstItem="Kas-VU-u3S" firstAttribute="top" secondItem="xsE-sE-uir" secondAttribute="bottom" id="ndD-ci-23r"/>
+                            <constraint firstItem="Kas-VU-u3S" firstAttribute="leading" secondItem="Hvw-E8-zCL" secondAttribute="leading" id="sOq-vJ-Qjz"/>
+                            <constraint firstItem="qIS-q4-ney" firstAttribute="top" secondItem="xsE-sE-uir" secondAttribute="bottom" constant="50" id="vIe-0j-Ei8"/>
                             <constraint firstItem="Hvw-E8-zCL" firstAttribute="trailing" secondItem="xsE-sE-uir" secondAttribute="trailing" id="wBt-Sh-obo"/>
                             <constraint firstItem="CgF-6A-KEW" firstAttribute="leading" secondItem="Hvw-E8-zCL" secondAttribute="leading" id="wXF-VN-uoe"/>
+                            <constraint firstAttribute="trailing" secondItem="qIS-q4-ney" secondAttribute="trailing" id="zI5-60-PLd"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -162,10 +193,27 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="I67-Sr-FSt">
+            <objects>
+                <viewController id="7xX-Bv-Avf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b8e-Rf-1yG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="502"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQv-fa-fyY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2780" y="119"/>
+        </scene>
     </scenes>
     <resources>
         <image name="menuIcon" width="32" height="32"/>
         <image name="sun" width="48" height="48"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
