@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD994DDA25AB0D2B0031AC5C /* HourlyWeatherCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD994DD925AB0D2B0031AC5C /* HourlyWeatherCollectionViewController.swift */; };
+		CD994DDD25AB0DAC0031AC5C /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */; };
 		CD9C45DA25A5FA6E00706C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */; };
 		CD9C45DC25A5FA6E00706C49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */; };
 		CD9C45DE25A5FA6E00706C49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45DD25A5FA6E00706C49 /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD994DD925AB0D2B0031AC5C /* HourlyWeatherCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCollectionViewController.swift; sourceTree = "<group>"; };
+		CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		CD9C45D625A5FA6E00706C49 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				CD9C45DD25A5FA6E00706C49 /* ViewController.swift */,
 				CD9C45FA25A6003C00706C49 /* MainViewController.swift */,
 				CD9C45DF25A5FA6E00706C49 /* Main.storyboard */,
+				CD994DD925AB0D2B0031AC5C /* HourlyWeatherCollectionViewController.swift */,
+				CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */,
 				CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */,
 				CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */,
 				CD9C45E525A5FA6F00706C49 /* Assets.xcassets */,
@@ -166,9 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9C45E425A5FA6E00706C49 /* WeatherApp.xcdatamodeld in Sources */,
+				CD994DDD25AB0DAC0031AC5C /* HourlyWeatherCell.swift in Sources */,
 				CD9C45DE25A5FA6E00706C49 /* ViewController.swift in Sources */,
 				CD9C45DA25A5FA6E00706C49 /* AppDelegate.swift in Sources */,
 				CD9C45DC25A5FA6E00706C49 /* SceneDelegate.swift in Sources */,
+				CD994DDA25AB0D2B0031AC5C /* HourlyWeatherCollectionViewController.swift in Sources */,
 				CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */,
 				CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */,
 				CDA6CE6C25A9FFED00098611 /* TodayDetailsViewController.swift in Sources */,

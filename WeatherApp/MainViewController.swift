@@ -32,7 +32,6 @@ class MainViewController: UIViewController {
     
     @IBAction func didDetailsSegmentChange(_ sender: UISegmentedControl) {
         hideAllSubviews()
-        print(sender.selectedSegmentIndex)
         subviews[sender.selectedSegmentIndex].isHidden = false
     }
     
