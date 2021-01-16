@@ -221,7 +221,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="482"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SBL-qI-Tw5">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SBL-qI-Tw5">
                                 <rect key="frame" x="15" y="15" width="384" height="120"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
@@ -234,6 +234,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
+                                <containerView key="backgroundView" opaque="NO" contentMode="scaleToFill" id="AH6-0P-viq">
+                                    <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                </containerView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="HourlyWeather" id="rDk-sK-Mk2" customClass="HourlyWeatherCell" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="60" height="100"/>
@@ -272,16 +276,31 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="hourText" destination="ufD-bL-nIY" id="cc2-2d-eEA"/>
+                                            <outlet property="temperatureText" destination="3fJ-Yt-SLi" id="Kwf-BS-Len"/>
+                                            <outlet property="weatherIcon" destination="F9U-Tn-Uhh" id="Ufw-T1-9I5"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP9-0g-zwV">
+                                <rect key="frame" x="15" y="150" width="384" height="317"/>
+                                <connections>
+                                    <segue destination="csg-lH-34h" kind="embed" id="zQy-a2-mnI"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wqo-Gb-k7M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fP9-0g-zwV" secondAttribute="trailing" constant="15" id="3rR-RH-6iF"/>
+                            <constraint firstAttribute="bottom" secondItem="fP9-0g-zwV" secondAttribute="bottom" constant="15" id="7TP-B0-krY"/>
                             <constraint firstItem="SBL-qI-Tw5" firstAttribute="top" secondItem="Ssq-Uf-aAn" secondAttribute="top" constant="15" id="E8F-70-XwR"/>
                             <constraint firstItem="SBL-qI-Tw5" firstAttribute="leading" secondItem="Ssq-Uf-aAn" secondAttribute="leading" constant="15" id="QwB-FT-7Ra"/>
                             <constraint firstAttribute="trailing" secondItem="SBL-qI-Tw5" secondAttribute="trailing" constant="15" id="RGH-3e-sql"/>
+                            <constraint firstItem="fP9-0g-zwV" firstAttribute="top" secondItem="SBL-qI-Tw5" secondAttribute="bottom" constant="15" id="fys-5f-6Jh"/>
+                            <constraint firstItem="fP9-0g-zwV" firstAttribute="leading" secondItem="Ssq-Uf-aAn" secondAttribute="leading" constant="15" id="vbX-nG-IiA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -307,12 +326,96 @@
             </objects>
             <point key="canvasLocation" x="2426" y="794"/>
         </scene>
+        <!--Today Weather Condition View Controller-->
+        <scene sceneID="Cz0-2u-9mC">
+            <objects>
+                <viewController id="csg-lH-34h" customClass="TodayWeatherConditionViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tOY-VZ-0gK">
+                        <rect key="frame" x="0.0" y="0.0" width="384" height="317"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dziś" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAs-ix-Wbn">
+                                <rect key="frame" x="15" y="15" width="37" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4PP-wQ-tTz"/>
+                                    <constraint firstAttribute="width" constant="37" id="Q3R-fl-TBN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" red="0.1215686275" green="0.25882352939999997" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PuQ-f6-jbp">
+                                <rect key="frame" x="15" y="46" width="354" height="256"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="ggZ-UO-gsv">
+                                    <size key="itemSize" width="90" height="70"/>
+                                    <size key="estimatedItemSize" width="90" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCondition" id="RFA-Q9-sny" customClass="TodayWeatherConditionCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ggY-QE-Jo4">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqX-2o-Phb">
+                                                    <rect key="frame" x="8" y="36" width="43" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
+                                                    <color key="textColor" red="0.1215686275" green="0.25882352939999997" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRg-Lo-Am5">
+                                                    <rect key="frame" x="8" y="12" width="74" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11"/>
+                                                    <color key="textColor" systemColor="systemGray3Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleCondition" destination="DRg-Lo-Am5" id="I7Q-wo-y86"/>
+                                            <outlet property="weatherValueCondition" destination="AqX-2o-Phb" id="s3Q-d5-N8Y"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="oAs-ix-Wbn" firstAttribute="top" secondItem="tOY-VZ-0gK" secondAttribute="top" constant="15" id="2DV-5N-o0j"/>
+                            <constraint firstItem="PuQ-f6-jbp" firstAttribute="leading" secondItem="tOY-VZ-0gK" secondAttribute="leading" constant="15" id="NVG-d4-NDU"/>
+                            <constraint firstItem="PuQ-f6-jbp" firstAttribute="top" secondItem="oAs-ix-Wbn" secondAttribute="bottom" constant="10" id="V7E-us-TLq"/>
+                            <constraint firstItem="oAs-ix-Wbn" firstAttribute="leading" secondItem="tOY-VZ-0gK" secondAttribute="leading" constant="15" id="qeU-ej-ENa"/>
+                            <constraint firstAttribute="trailing" secondItem="PuQ-f6-jbp" secondAttribute="trailing" constant="15" id="rjy-Cw-hVg"/>
+                            <constraint firstAttribute="bottom" secondItem="PuQ-f6-jbp" secondAttribute="bottom" constant="15" id="zev-G9-WRj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="PuQ-f6-jbp" id="hp3-NA-tzY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FeC-wS-n0x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373.913043478261" y="1180.9151785714284"/>
+        </scene>
     </scenes>
     <resources>
         <image name="menuIcon" width="32" height="32"/>
         <image name="sun" width="48" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
