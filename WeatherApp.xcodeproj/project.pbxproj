@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0A9E6225B45D41005FDC75 /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9E6125B45D41005FDC75 /* DailyWeatherCell.swift */; };
 		CD994DDD25AB0DAC0031AC5C /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */; };
 		CD9C45DA25A5FA6E00706C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */; };
 		CD9C45DC25A5FA6E00706C49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD0A9E6125B45D41005FDC75 /* DailyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
 		CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		CD9C45D625A5FA6E00706C49 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */,
 				CDC0E33125B36942007C424B /* TodayWeatherConditionCell.swift */,
 				CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */,
+				CD0A9E6125B45D41005FDC75 /* DailyWeatherCell.swift */,
 				CD9C45E525A5FA6F00706C49 /* Assets.xcassets */,
 				CD9C45E725A5FA6F00706C49 /* LaunchScreen.storyboard */,
 				CD9C45EA25A5FA6F00706C49 /* Info.plist */,
@@ -183,6 +186,7 @@
 				CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */,
 				CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */,
 				CDC0E33225B36942007C424B /* TodayWeatherConditionCell.swift in Sources */,
+				CD0A9E6225B45D41005FDC75 /* DailyWeatherCell.swift in Sources */,
 				CDA6CE6C25A9FFED00098611 /* TodayDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
