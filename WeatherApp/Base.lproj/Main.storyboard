@@ -188,6 +188,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailsContainer" destination="FR9-9Y-LOq" id="Zy5-uA-1IO"/>
                         <outlet property="todayDetailsContainer" destination="Jqx-cl-mcz" id="VXQ-mM-yez"/>
                         <outlet property="weeklyDetailsContainer" destination="l94-Ov-I86" id="ywV-bG-vLk"/>
                     </connections>
@@ -386,6 +387,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="N4S-wD-ZDu"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="oAs-ix-Wbn" firstAttribute="top" secondItem="tOY-VZ-0gK" secondAttribute="top" constant="15" id="2DV-5N-o0j"/>

@@ -9,12 +9,14 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var detailsContainer: UIView!
     @IBOutlet var todayDetailsContainer: UIView!
     @IBOutlet var weeklyDetailsContainer: UIView!
     var subviews = [UIView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        detailsContainer.layer.cornerRadius = 15
         configureDetailsSubviews()
     }
     

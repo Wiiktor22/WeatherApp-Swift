@@ -13,9 +13,7 @@ class TodayDetailsViewController: UIViewController, UICollectionViewDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         
-        //collectionView.register(HourlyWeatherCell.self, forCellWithReuseIdentifier: "HourlyWeatherCell")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
