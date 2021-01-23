@@ -28,6 +28,19 @@ class TodayDetailsViewController: UIViewController, UICollectionViewDataSource, 
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
         
+        cell.weatherIcon.image = UIImage(named: "clouds")
+        cell.temperatureText.text = "-- °C"
+        
+        let actualHour = Calendar.current.component(.hour, from: Date())
+        let hourToDisplay = actualHour + indexPath.item + 1
+        
+        if hourToDisplay < 24 {
+            cell.hourText.text = "\(hourToDisplay):00"
+        } else {
+            cell.hourText.text = "\(hourToDisplay - 24):00"
+        }
+        
+        
         return cell
     }
     
