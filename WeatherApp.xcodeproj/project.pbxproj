@@ -80,20 +80,12 @@
 		CD9C45D825A5FA6E00706C49 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				CDA305C525BC94C900453643 /* Controller */,
 				CD9C45F225A5FD5F00706C49 /* Fonts */,
-				CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */,
+				CDA305C625BC950700453643 /* View */,
 				CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */,
-				CD9C45DD25A5FA6E00706C49 /* ViewController.swift */,
-				CD9C45FA25A6003C00706C49 /* MainViewController.swift */,
+				CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */,
 				CD9C45DF25A5FA6E00706C49 /* Main.storyboard */,
-				CDA305BF25BC87C200453643 /* MenuViewController.swift */,
-				CDA305C225BC889E00453643 /* CityItemCell.swift */,
-				CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */,
-				CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */,
-				CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */,
-				CDC0E33125B36942007C424B /* TodayWeatherConditionCell.swift */,
-				CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */,
-				CD0A9E6125B45D41005FDC75 /* DailyWeatherCell.swift */,
 				CD9C45E525A5FA6F00706C49 /* Assets.xcassets */,
 				CD9C45E725A5FA6F00706C49 /* LaunchScreen.storyboard */,
 				CD9C45EA25A5FA6F00706C49 /* Info.plist */,
@@ -109,6 +101,30 @@
 				CD9C45F725A5FD8400706C49 /* Montserrat-Medium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CDA305C525BC94C900453643 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD9C45DD25A5FA6E00706C49 /* ViewController.swift */,
+				CD9C45FA25A6003C00706C49 /* MainViewController.swift */,
+				CDA305BF25BC87C200453643 /* MenuViewController.swift */,
+				CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */,
+				CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */,
+				CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDA305C625BC950700453643 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDA305C225BC889E00453643 /* CityItemCell.swift */,
+				CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */,
+				CD0A9E6125B45D41005FDC75 /* DailyWeatherCell.swift */,
+				CDC0E33125B36942007C424B /* TodayWeatherConditionCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
