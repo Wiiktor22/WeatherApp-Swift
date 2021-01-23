@@ -19,6 +19,8 @@
 		CD9C45F525A5FD7A00706C49 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD9C45F425A5FD7A00706C49 /* Montserrat-Light.ttf */; };
 		CD9C45F825A5FD8400706C49 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD9C45F725A5FD8400706C49 /* Montserrat-Medium.ttf */; };
 		CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45FA25A6003C00706C49 /* MainViewController.swift */; };
+		CDA305C025BC87C200453643 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA305BF25BC87C200453643 /* MenuViewController.swift */; };
+		CDA305C325BC889E00453643 /* CityItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA305C225BC889E00453643 /* CityItemCell.swift */; };
 		CDA6CE6C25A9FFED00098611 /* TodayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */; };
 		CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */; };
 		CDC0E32F25B364E2007C424B /* TodayWeatherConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */; };
@@ -40,6 +42,8 @@
 		CD9C45F425A5FD7A00706C49 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		CD9C45F725A5FD8400706C49 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		CD9C45FA25A6003C00706C49 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CDA305BF25BC87C200453643 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CDA305C225BC889E00453643 /* CityItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityItemCell.swift; sourceTree = "<group>"; };
 		CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailsViewController.swift; sourceTree = "<group>"; };
 		CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailsViewController.swift; sourceTree = "<group>"; };
 		CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherConditionViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 				CD9C45DD25A5FA6E00706C49 /* ViewController.swift */,
 				CD9C45FA25A6003C00706C49 /* MainViewController.swift */,
 				CD9C45DF25A5FA6E00706C49 /* Main.storyboard */,
+				CDA305BF25BC87C200453643 /* MenuViewController.swift */,
+				CDA305C225BC889E00453643 /* CityItemCell.swift */,
 				CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */,
 				CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */,
 				CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */,
@@ -183,7 +189,9 @@
 				CD9C45DE25A5FA6E00706C49 /* ViewController.swift in Sources */,
 				CD9C45DA25A5FA6E00706C49 /* AppDelegate.swift in Sources */,
 				CD9C45DC25A5FA6E00706C49 /* SceneDelegate.swift in Sources */,
+				CDA305C325BC889E00453643 /* CityItemCell.swift in Sources */,
 				CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */,
+				CDA305C025BC87C200453643 /* MenuViewController.swift in Sources */,
 				CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */,
 				CDC0E33225B36942007C424B /* TodayWeatherConditionCell.swift in Sources */,
 				CD0A9E6225B45D41005FDC75 /* DailyWeatherCell.swift in Sources */,

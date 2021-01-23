@@ -62,20 +62,23 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuIcon" translatesAutoresizingMaskIntoConstraints="NO" id="GAm-WD-2dr">
-                                        <rect key="frame" x="20" y="9" width="30" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8C-gN-vw3">
+                                        <rect key="frame" x="15" y="9" width="30" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="7dy-ug-oM9"/>
+                                            <constraint firstAttribute="width" constant="30" id="KJe-yu-Wyh"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="menuIcon"/>
+                                        <connections>
+                                            <segue destination="0SL-TF-LaY" kind="presentation" id="Kcc-nG-9FR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DIv-dR-ceX"/>
-                                    <constraint firstItem="GAm-WD-2dr" firstAttribute="leading" secondItem="CgF-6A-KEW" secondAttribute="leading" constant="20" id="F2G-m3-RzE"/>
-                                    <constraint firstItem="GAm-WD-2dr" firstAttribute="centerY" secondItem="CgF-6A-KEW" secondAttribute="centerY" id="Riv-AZ-EIh"/>
+                                    <constraint firstItem="p8C-gN-vw3" firstAttribute="leading" secondItem="CgF-6A-KEW" secondAttribute="leading" constant="15" id="Ozg-5T-CFp"/>
                                     <constraint firstItem="jku-tc-Z3J" firstAttribute="centerY" secondItem="CgF-6A-KEW" secondAttribute="centerY" id="aIC-3s-lub"/>
                                     <constraint firstItem="jku-tc-Z3J" firstAttribute="centerX" secondItem="CgF-6A-KEW" secondAttribute="centerX" id="ohD-mA-dNf"/>
+                                    <constraint firstItem="p8C-gN-vw3" firstAttribute="centerY" secondItem="CgF-6A-KEW" secondAttribute="centerY" id="yHI-3x-Lf5"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xsE-sE-uir" userLabel="MainInfo">
@@ -169,7 +172,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hvw-E8-zCL"/>
-                        <color key="backgroundColor" red="0.18431372549019609" green="0.53725490196078429" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.31448578830000001" green="0.65511316060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Hvw-E8-zCL" firstAttribute="trailing" secondItem="CgF-6A-KEW" secondAttribute="trailing" id="7YE-OP-Sha"/>
                             <constraint firstItem="xsE-sE-uir" firstAttribute="top" secondItem="CgF-6A-KEW" secondAttribute="bottom" id="cBg-Zd-fhK"/>
@@ -194,6 +197,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ4-Q6-NcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1911.594202898551" y="118.52678571428571"/>
+        </scene>
+        <!--Miasta-->
+        <scene sceneID="sFN-IC-eOU">
+            <objects>
+                <tableViewController title="Miasta" id="0SL-TF-LaY" customClass="MenuViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0gm-t6-fKh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.31448578830000001" green="0.65511316060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="5Iz-od-ivi">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miasta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxA-uf-nRI">
+                                    <rect key="frame" x="15" y="16.5" width="100" height="27"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="fqR-Xm-nwR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="22"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.31448578830000001" green="0.65511316060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="MxA-uf-nRI" firstAttribute="centerY" secondItem="5Iz-od-ivi" secondAttribute="centerY" id="k5I-HM-Pdn"/>
+                                <constraint firstItem="MxA-uf-nRI" firstAttribute="leading" secondItem="5Iz-od-ivi" secondAttribute="leading" constant="15" id="yNy-FS-9Fy"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityItem" rowHeight="60" id="aZ4-Ra-efy" customClass="CityItemCell" customModule="WeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aZ4-Ra-efy" id="75T-yT-0ei">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miasto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13W-hh-c5i">
+                                            <rect key="frame" x="35" y="19" width="105" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="G8j-A8-2tP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="13W-hh-c5i" firstAttribute="leading" secondItem="75T-yT-0ei" secondAttribute="leadingMargin" constant="15" id="GEF-JI-kBt"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="13W-hh-c5i" secondAttribute="trailing" constant="20" symbolic="YES" id="iRh-Ja-R3f"/>
+                                        <constraint firstItem="13W-hh-c5i" firstAttribute="centerY" secondItem="75T-yT-0ei" secondAttribute="centerY" id="ws1-qF-LMr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.31448578830000001" green="0.65511316060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="cityName" destination="13W-hh-c5i" id="cq2-1U-b0u"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="0SL-TF-LaY" id="ygB-WK-QeM"/>
+                            <outlet property="delegate" destination="0SL-TF-LaY" id="ppS-sB-QUu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ana-Cs-Fgo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2815.9420289855075" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u9C-Rj-BSk">
@@ -476,9 +549,6 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
