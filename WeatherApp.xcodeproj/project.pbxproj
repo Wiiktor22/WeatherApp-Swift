@@ -21,10 +21,12 @@
 		CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45FA25A6003C00706C49 /* MainViewController.swift */; };
 		CDA305C025BC87C200453643 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA305BF25BC87C200453643 /* MenuViewController.swift */; };
 		CDA305C325BC889E00453643 /* CityItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA305C225BC889E00453643 /* CityItemCell.swift */; };
+		CDA305CA25BC963100453643 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA305C925BC963100453643 /* Router.swift */; };
 		CDA6CE6C25A9FFED00098611 /* TodayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */; };
 		CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */; };
 		CDC0E32F25B364E2007C424B /* TodayWeatherConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */; };
 		CDC0E33225B36942007C424B /* TodayWeatherConditionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC0E33125B36942007C424B /* TodayWeatherConditionCell.swift */; };
+		CDD65B2B25C1EACD005AF01C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD65B2A25C1EACD005AF01C /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +46,12 @@
 		CD9C45FA25A6003C00706C49 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CDA305BF25BC87C200453643 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CDA305C225BC889E00453643 /* CityItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityItemCell.swift; sourceTree = "<group>"; };
+		CDA305C925BC963100453643 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailsViewController.swift; sourceTree = "<group>"; };
 		CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailsViewController.swift; sourceTree = "<group>"; };
 		CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherConditionViewController.swift; sourceTree = "<group>"; };
 		CDC0E33125B36942007C424B /* TodayWeatherConditionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherConditionCell.swift; sourceTree = "<group>"; };
+		CDD65B2A25C1EACD005AF01C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			children = (
 				CDA305C525BC94C900453643 /* Controller */,
 				CD9C45F225A5FD5F00706C49 /* Fonts */,
+				CDA305C825BC95EC00453643 /* Network */,
 				CDA305C625BC950700453643 /* View */,
 				CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */,
 				CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */,
@@ -125,6 +130,15 @@
 				CDC0E33125B36942007C424B /* TodayWeatherConditionCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CDA305C825BC95EC00453643 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CDA305C925BC963100453643 /* Router.swift */,
+				CDD65B2A25C1EACD005AF01C /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +223,8 @@
 				CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */,
 				CDA305C025BC87C200453643 /* MenuViewController.swift in Sources */,
 				CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */,
+				CDD65B2B25C1EACD005AF01C /* NetworkService.swift in Sources */,
+				CDA305CA25BC963100453643 /* Router.swift in Sources */,
 				CDC0E33225B36942007C424B /* TodayWeatherConditionCell.swift in Sources */,
 				CD0A9E6225B45D41005FDC75 /* DailyWeatherCell.swift in Sources */,
 				CDA6CE6C25A9FFED00098611 /* TodayDetailsViewController.swift in Sources */,
