@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkService {
     
-    class func request<T: Codable>(router: Router, completion: @escaping ([String: [T]]) -> ()) {
+    class func request<T: Codable>(router: Router, completion: @escaping (T) -> ()) {
         
         var components = URLComponents()
         components.scheme = router.scheme
@@ -40,7 +40,8 @@ class NetworkService {
                 return
             }
             
-            let responseObject = try! JSONDecoder().decode([String: [T]].self, from: receivedData)
+            let responseObject = try! JSONDecoder().decode(T.self, from: receivedData)
+            
             DispatchQueue.main.async {
                 completion(responseObject)
             }
