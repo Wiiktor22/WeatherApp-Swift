@@ -23,6 +23,8 @@ class NetworkService {
         
         let session = URLSession(configuration: .default)
         
+        // TODO: Refactor error section
+        
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
             
             guard error == nil else {
@@ -45,6 +47,7 @@ class NetworkService {
             DispatchQueue.main.async {
                 completion(responseObject)
             }
+            
         }
         
         dataTask.resume()
