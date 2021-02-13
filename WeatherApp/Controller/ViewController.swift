@@ -36,7 +36,11 @@ class LoadingViewController: UIViewController {
                             vc.weatherDescriptionText = "Brak opisu"
                         }
                         
-                        // TODO: Icon!
+                        if let iconCode = weatherDescription[0]?.icon {
+                            vc.iconCode = getIconName(iconCode: iconCode)
+                        } else {
+                            vc.iconCode = "01d"
+                        }
                     } else {
                         print("There is no weatherDescription object...")
                     }

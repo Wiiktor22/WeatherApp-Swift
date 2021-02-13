@@ -19,12 +19,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var actualTemperatureLabel: UILabel!
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var maxTemperatureLabel: UILabel!
+    @IBOutlet weak var currentWeatherIcon: UIImageView!
     
     var cityAndCountryText: String! = nil
     var weatherDescriptionText: String! = nil
     var actualTemperatureText: String! = nil
     var minTemperatureText: String! = nil
     var maxTemperatureText: String! = nil
+    var iconCode: String! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ class MainViewController: UIViewController {
         configureDetailsSubviews()
         
         setValuesIntoLabels()
+        currentWeatherIcon.image = UIImage(named: iconCode)
     }
     
     func setValuesIntoLabels() {

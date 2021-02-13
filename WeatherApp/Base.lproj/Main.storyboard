@@ -213,6 +213,7 @@
                     <connections>
                         <outlet property="actualTemperatureLabel" destination="F5q-SY-u6j" id="3Fa-Ny-6kZ"/>
                         <outlet property="cityAndCountryLabel" destination="htD-dM-ytz" id="HhN-of-hVz"/>
+                        <outlet property="currentWeatherIcon" destination="CdJ-Xd-NbS" id="en2-Cb-113"/>
                         <outlet property="detailsContainer" destination="FR9-9Y-LOq" id="Zy5-uA-1IO"/>
                         <outlet property="maxTemperatureLabel" destination="ThU-jN-qeU" id="HHy-rk-1zw"/>
                         <outlet property="minTemperatureLabel" destination="bJV-96-9QG" id="syh-q1-83n"/>

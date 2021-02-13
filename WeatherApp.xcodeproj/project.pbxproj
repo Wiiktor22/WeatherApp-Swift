@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD0A9E6225B45D41005FDC75 /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9E6125B45D41005FDC75 /* DailyWeatherCell.swift */; };
+		CD1513BE25D837DD001B1EB1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1513BD25D837DD001B1EB1 /* Utils.swift */; };
 		CD3A330C25C8A92C00BF9B34 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A330B25C8A92C00BF9B34 /* WeatherData.swift */; };
 		CD994DDD25AB0DAC0031AC5C /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */; };
 		CD9C45DA25A5FA6E00706C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		CD0A9E6125B45D41005FDC75 /* DailyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
+		CD1513BD25D837DD001B1EB1 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CD3A330B25C8A92C00BF9B34 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		CD9C45D625A5FA6E00706C49 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD1513BC25D837B5001B1EB1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CD1513BD25D837DD001B1EB1 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		CD77938E25C5EBB900D936C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +109,9 @@
 				CD77938E25C5EBB900D936C0 /* Model */,
 				CDA305C825BC95EC00453643 /* Network */,
 				CDA305C625BC950700453643 /* View */,
-				CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */,
+				CD1513BC25D837B5001B1EB1 /* Utils */,
 				CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */,
+				CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */,
 				CD9C45DF25A5FA6E00706C49 /* Main.storyboard */,
 				CD9C45E525A5FA6F00706C49 /* Assets.xcassets */,
 				CD9C45E725A5FA6F00706C49 /* LaunchScreen.storyboard */,
@@ -233,6 +244,7 @@
 				CD3A330C25C8A92C00BF9B34 /* WeatherData.swift in Sources */,
 				CDA305C325BC889E00453643 /* CityItemCell.swift in Sources */,
 				CD9C45FB25A6003C00706C49 /* MainViewController.swift in Sources */,
+				CD1513BE25D837DD001B1EB1 /* Utils.swift in Sources */,
 				CDA305C025BC87C200453643 /* MenuViewController.swift in Sources */,
 				CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */,
 				CDD65B2B25C1EACD005AF01C /* NetworkService.swift in Sources */,
