@@ -14,10 +14,32 @@ class MainViewController: UIViewController {
     @IBOutlet var weeklyDetailsContainer: UIView!
     var subviews = [UIView]()
 
+    @IBOutlet weak var cityAndCountryLabel: UILabel!
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    @IBOutlet weak var actualTemperatureLabel: UILabel!
+    @IBOutlet weak var minTemperatureLabel: UILabel!
+    @IBOutlet weak var maxTemperatureLabel: UILabel!
+    
+    var cityAndCountryText: String! = nil
+    var weatherDescriptionText: String! = nil
+    var actualTemperatureText: String! = nil
+    var minTemperatureText: String! = nil
+    var maxTemperatureText: String! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsContainer.layer.cornerRadius = 15
         configureDetailsSubviews()
+        
+        setValuesIntoLabels()
+    }
+    
+    func setValuesIntoLabels() {
+        cityAndCountryLabel.text = cityAndCountryText
+        weatherDescriptionLabel.text = weatherDescriptionText
+        actualTemperatureLabel.text = actualTemperatureText
+        minTemperatureLabel.text = minTemperatureText
+        maxTemperatureLabel.text = maxTemperatureText
     }
     
     func configureDetailsSubviews() {

@@ -43,10 +43,7 @@ struct DailyWeatherObject: Codable {
 }
 
 struct DailyWeatherTempObject: Codable {
-    var day: Double?
-    var night: Double?
-    var min: Double?
-    var max: Double?
+    var temp: TempObjectInsideDailyWeather?
     var pressure: Int?
     var humidity: Int?
     var wind_speed: Double?
@@ -54,4 +51,11 @@ struct DailyWeatherTempObject: Codable {
     var weather: [WeatherDescriptionObject?]?
     var clouds: Int?
     var pop: Double?
+}
+
+struct TempObjectInsideDailyWeather: Codable {
+    var day: Double?
+    var night: Double?
+    var min: Double?
+    var max: Double?
 }
