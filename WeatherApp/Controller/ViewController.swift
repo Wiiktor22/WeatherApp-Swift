@@ -52,8 +52,8 @@ class LoadingViewController: UIViewController {
                 
                 if let dailyWeatherData = result.daily {
                     if let minTemperature = dailyWeatherData[0]?.temp?.min, let maxTemperature = dailyWeatherData[0]?.temp?.max {
-                        let formattedMinTemperature = String(format: "Min: %.0f °C", minTemperature)
-                        let formattedMaxTemperature = String(format: "Max: %.0f °C", maxTemperature)
+                        let formattedMinTemperature = String(format: "%.0f °C", minTemperature)
+                        let formattedMaxTemperature = String(format: "%.0f °C", maxTemperature)
                         print("Temperature")
                         print(formattedMaxTemperature)
                         print(formattedMinTemperature)
