@@ -45,6 +45,10 @@ class MainViewController: UIViewController {
         maxTemperatureLabel.text = maxTemperatureText
     }
     
+    // MARK: - SUBVIEWS
+    
+    var hourlyWeatherData: [HourlyWeatherData]! = nil
+    
     func configureDetailsSubviews() {
         subviews = [todayDetailsContainer, weeklyDetailsContainer]
         hideAllSubviews()
@@ -61,6 +65,8 @@ class MainViewController: UIViewController {
         hideAllSubviews()
         subviews[sender.selectedSegmentIndex].isHidden = false
     }
+    
+    
     
     /*
     // MARK: - Navigation
