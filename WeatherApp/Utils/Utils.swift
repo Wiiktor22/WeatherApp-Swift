@@ -23,6 +23,31 @@ func getIconName(iconCode: String) -> String {
     }
 }
 
+func getWindDirection(_ windDegree: Int) -> String {
+    if (windDegree ~= windDegree) {
+        switch windDegree {
+            case 23...66:
+                return "NE"
+            case 67...112:
+                return "E"
+            case 113...158:
+                return "SE"
+            case 159...204:
+                return "S"
+            case 205...250:
+                return "SW"
+            case 251...296:
+                return "W"
+            case 297...338:
+                return "NW"
+            default:
+                return "N"
+        }
+    } else {
+        return "Error"
+    }
+}
+
 extension UIColor{
     convenience init(hex: String, alpha: CGFloat) {
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -44,5 +69,15 @@ extension UIColor{
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: alpha
         )
+    }
+}
+
+extension Date {
+    var millisecondsSince1970:Int64 {
+        return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds:Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
     }
 }

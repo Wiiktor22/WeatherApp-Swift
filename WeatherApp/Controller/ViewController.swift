@@ -30,6 +30,7 @@ class LoadingViewController: UIViewController {
                 if let currentWeatherData = result.current {
                     // TODO: Set proper name and date??
                     vc.cityAndCountryText = "Gdynia, Polska"
+                    vc.todayWeatherConditionData = self.prepareTodayWeatherConditionData(currentWeatherData)
                     
                     if let weatherDescription = currentWeatherData.weather {
                         if let description = weatherDescription[0]!.description {
@@ -104,6 +105,31 @@ class LoadingViewController: UIViewController {
         } else {
             return hourlyWeatherData
         }
+    }
+    
+    func prepareTodayWeatherConditionData(_ weatherConditionData: CurrentWeatherObject) -> TodayWeatherConditionData {
+        let currentTime = Date()
+        var sunTime: Date? = nil
+        
+        if let sunrise = weatherConditionData.sunrise, let sunset = weatherConditionData.sunset {
+            let convertedSunrise = Date(milliseconds: sunrise)
+            let convertedSunset = Date(milliseconds: sunset)
+            
+            if (currentTime < convertedSunset) {
+                sunTime = convertedSunset
+            } else {
+                sunTime = convertedSunrise
+            }
+        }
+        
+        return TodayWeatherConditionData(
+            feelsLikeTemp: weatherConditionData.feels_like ?? 0,
+            pressure: weatherConditionData.pressure ?? 0,
+            humidity: weatherConditionData.humidity ?? 0,
+            windSpeed: weatherConditionData.wind_speed ?? 0,
+            windDegree: getWindDirection(weatherConditionData.wind_deg ?? 0),
+            sunTime: sunTime ?? Date()
+        )
     }
 }
 

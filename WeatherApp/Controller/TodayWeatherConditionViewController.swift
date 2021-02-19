@@ -12,11 +12,14 @@ class TodayWeatherConditionViewController: UIViewController, UICollectionViewDel
     @IBOutlet weak var collectionView: UICollectionView!
     
     var weatherConditionTitles = ["odczuwalna", "ciśnienie", "wilgotność", "wiatr", "kierunek"]
+    var todayWeatherConditionData: TodayWeatherConditionData! = nil
+    var weatherCondition = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         weatherConditionTitles.append(addLastWeatherConditionTitle())
+        weatherCondition = createArrayOfWeatherConditionValues(todayWeatherConditionData)
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -44,8 +47,23 @@ class TodayWeatherConditionViewController: UIViewController, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCondition", for: indexPath) as! TodayWeatherConditionCell
         
         cell.titleCondition.text = weatherConditionTitles[indexPath.item]
+        cell.weatherValueCondition.text = weatherCondition[indexPath.item]
         
         return cell
+    }
+    
+    func createArrayOfWeatherConditionValues(_ weatherCondition: TodayWeatherConditionData) -> [String] {
+        let hour = Calendar.current.component(.hour, from: weatherCondition.sunTime)
+        let minute = Calendar.current.component(.minute, from: weatherCondition.sunTime)
+        
+        return [
+            String(format: "%.0f°C", weatherCondition.feelsLikeTemp),
+            "\(weatherCondition.pressure) hPa",
+            "\(weatherCondition.humidity)%",
+            "\(weatherCondition.windSpeed) km/h",
+            weatherCondition.windDegree,
+            "\(hour):\(minute)"
+        ]
     }
 
 }

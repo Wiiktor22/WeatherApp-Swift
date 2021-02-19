@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
     // MARK: - SUBVIEWS
     
     var hourlyWeatherData: [HourlyWeatherData]! = nil
+    var todayWeatherConditionData: TodayWeatherConditionData! = nil
     
     func configureDetailsSubviews() {
         subviews = [todayDetailsContainer, weeklyDetailsContainer]
@@ -70,7 +71,8 @@ class MainViewController: UIViewController {
         if (segue.identifier == "TodayDetailsSegue") {
             let destVC = segue.destination as! TodayDetailsViewController
             destVC.hourlyWeatherData = hourlyWeatherData
-        }
+            destVC.todayWeatherConditionData = todayWeatherConditionData
+        } 
     }
 
 }

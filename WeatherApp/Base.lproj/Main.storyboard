@@ -172,7 +172,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l94-Ov-I86">
                                         <rect key="frame" x="0.0" y="70" width="414" height="418.5"/>
                                         <connections>
-                                            <segue destination="vZG-oR-qcQ" kind="embed" id="Aw2-yl-MbF"/>
+                                            <segue destination="vZG-oR-qcQ" kind="embed" identifier="WeeklyDetailsSegue" id="Aw2-yl-MbF"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -529,7 +529,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqX-2o-Phb">
-                                                    <rect key="frame" x="8" y="36" width="43" height="19"/>
+                                                    <rect key="frame" x="8" y="36" width="74" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
                                                     <color key="textColor" red="0.1215686275" green="0.25882352939999997" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -565,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeC-wS-n0x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1373.913043478261" y="1180.9151785714284"/>
+            <point key="canvasLocation" x="1373.913043478261" y="1180.5803571428571"/>
         </scene>
     </scenes>
     <resources>
