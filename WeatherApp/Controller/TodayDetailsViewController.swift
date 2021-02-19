@@ -28,7 +28,11 @@ class TodayDetailsViewController: UIViewController, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyWeather", for: indexPath) as! HourlyWeatherCell
         
         cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor(hex: "#d6d6d6", alpha: 1).cgColor
+        cell.layer.shadowOpacity = 0.6
+        cell.layer.shadowOffset = .zero
+        cell.layer.shadowRadius = 5
         
         let currentIterationData = hourlyWeatherData[indexPath.item]
         

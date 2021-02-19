@@ -323,7 +323,6 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SBL-qI-Tw5">
                                 <rect key="frame" x="15" y="0.0" width="384" height="120"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="0vN-if-tcS"/>
                                 </constraints>
@@ -574,9 +573,6 @@
         <image name="menuIcon" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
