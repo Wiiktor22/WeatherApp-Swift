@@ -11,6 +11,8 @@ class TodayDetailsViewController: UIViewController, UICollectionViewDataSource, 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var hourlyWeatherData: [HourlyWeatherData]! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +21,7 @@ class TodayDetailsViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return hourlyWeatherData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -28,18 +30,17 @@ class TodayDetailsViewController: UIViewController, UICollectionViewDataSource, 
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
         
-        cell.weatherIcon.image = UIImage(named: "clouds")
-        cell.temperatureText.text = "-- °C"
+        let currentIterationData = hourlyWeatherData[indexPath.item]
         
-        let actualHour = Calendar.current.component(.hour, from: Date())
-        let hourToDisplay = actualHour + indexPath.item + 1
+        cell.weatherIcon.image = UIImage(named: getIconName(iconCode: currentIterationData.iconCode))
+        cell.temperatureText.text = String(format: "%.0f°C", currentIterationData.temp)
         
+        let hourToDisplay = currentIterationData.hour
         if hourToDisplay < 24 {
             cell.hourText.text = "\(hourToDisplay):00"
         } else {
             cell.hourText.text = "\(hourToDisplay - 24):00"
         }
-        
         
         return cell
     }

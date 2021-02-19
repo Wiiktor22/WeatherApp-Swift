@@ -141,7 +141,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="CdJ-Xd-NbS">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="CdJ-Xd-NbS">
                                         <rect key="frame" x="183" y="223.5" width="48" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="2jb-65-BzQ"/>
@@ -166,7 +166,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqx-cl-mcz">
                                         <rect key="frame" x="0.0" y="70" width="414" height="418.5"/>
                                         <connections>
-                                            <segue destination="5Ih-ah-lDy" kind="embed" id="G7X-en-nQE"/>
+                                            <segue destination="5Ih-ah-lDy" kind="embed" identifier="TodayDetailsSegue" id="G7X-en-nQE"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l94-Ov-I86">
@@ -570,8 +570,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="01d" width="48" height="48"/>
         <image name="menuIcon" width="32" height="32"/>
-        <image name="sun" width="48" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
