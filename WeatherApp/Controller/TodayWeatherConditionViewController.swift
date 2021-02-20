@@ -17,26 +17,10 @@ class TodayWeatherConditionViewController: UIViewController, UICollectionViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        weatherConditionTitles.append(addLastWeatherConditionTitle())
         weatherCondition = createArrayOfWeatherConditionValues(todayWeatherConditionData)
 
         collectionView.delegate = self
         collectionView.dataSource = self
-    }
-    
-    func addLastWeatherConditionTitle() -> String{
-        let now = Date()
-        let hour = Calendar.current.component(.hour, from: now)
-        //let minute = Calendar.current.component(.minute, from: now)
-        
-        // TODO: Set true time, to define which title should be right now
-        
-        if hour > 17 || hour < 7 {
-            return "zachód"
-        } else {
-            return "wschód"
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,6 +39,8 @@ class TodayWeatherConditionViewController: UIViewController, UICollectionViewDel
     func createArrayOfWeatherConditionValues(_ weatherCondition: TodayWeatherConditionData) -> [String] {
         let hour = Calendar.current.component(.hour, from: weatherCondition.sunTime)
         let minute = Calendar.current.component(.minute, from: weatherCondition.sunTime)
+        
+        weatherConditionTitles.append(weatherCondition.lastLabelText)
         
         return [
             getTemperatureValue(temperature: weatherCondition.feelsLikeTemp),

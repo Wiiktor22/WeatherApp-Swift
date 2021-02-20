@@ -14,4 +14,5 @@ struct TodayWeatherConditionData: Codable {
     var windSpeed: Double
     var windDegree: String
     var sunTime: Date
+    var lastLabelText: String
 }
