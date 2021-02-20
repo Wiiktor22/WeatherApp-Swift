@@ -133,15 +133,3 @@ class LoadingViewController: UIViewController {
         )
     }
 }
-
-// TODO: Place this extension in proper way
-extension String {
-    func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
-    }
-
-    mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
-    }
-}
-
