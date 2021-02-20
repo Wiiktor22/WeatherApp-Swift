@@ -48,6 +48,14 @@ func getWindDirection(_ windDegree: Int) -> String {
     }
 }
 
+func getTemperatureValue(temperature: Double) -> String {
+    if (temperature > -1 && temperature < 1) {
+        return "0°C"
+    } else {
+        return String(format: "%.0f°C", temperature)
+    }
+}
+
 extension UIColor{
     convenience init(hex: String, alpha: CGFloat) {
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

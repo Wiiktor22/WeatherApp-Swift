@@ -38,8 +38,7 @@ class TodayDetailsViewController: UIViewController, UICollectionViewDataSource, 
         let currentIterationData = hourlyWeatherData[indexPath.item]
         
         cell.weatherIcon.image = UIImage(named: getIconName(iconCode: currentIterationData.iconCode))
-        cell.temperatureText.text = String(format: "%.0f°C", currentIterationData.temp)
-        
+        cell.temperatureText.text = getTemperatureValue(temperature: currentIterationData.temp)        
         let hourToDisplay = currentIterationData.hour
         if hourToDisplay < 24 {
             cell.hourText.text = "\(hourToDisplay):00"

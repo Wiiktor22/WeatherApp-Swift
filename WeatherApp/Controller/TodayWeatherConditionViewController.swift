@@ -57,7 +57,7 @@ class TodayWeatherConditionViewController: UIViewController, UICollectionViewDel
         let minute = Calendar.current.component(.minute, from: weatherCondition.sunTime)
         
         return [
-            String(format: "%.0f°C", weatherCondition.feelsLikeTemp),
+            getTemperatureValue(temperature: weatherCondition.feelsLikeTemp),
             "\(weatherCondition.pressure) hPa",
             "\(weatherCondition.humidity)%",
             "\(weatherCondition.windSpeed) km/h",
