@@ -12,6 +12,7 @@ class WeeklyDetailsViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet weak var collectionView: UICollectionView!
     
     var days = [String]()
+    var dailyTemperature: [WeeklyTemperatureData]! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +65,8 @@ class WeeklyDetailsViewController: UIViewController, UICollectionViewDataSource,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DailyWeather", for: indexPath) as! DailyWeatherCell
         
         cell.dayOfAWeek.text = days[indexPath.item]
-        cell.temperature.text = "-- °C"
-        cell.weatherIcon.image = UIImage(named: "clouds")
+        cell.temperature.text = dailyTemperature[indexPath.item].temp
+        cell.weatherIcon.image = UIImage(named: getIconName(iconCode: dailyTemperature[indexPath.item].iconCode))
         
         // TODO: Check width of the cell
         

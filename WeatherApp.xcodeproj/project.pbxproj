@@ -28,6 +28,7 @@
 		CDA305CA25BC963100453643 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA305C925BC963100453643 /* Router.swift */; };
 		CDA6CE6C25A9FFED00098611 /* TodayDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */; };
 		CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */; };
+		CDBAFF9425E55CCF00064AE2 /* WeeklyWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAFF9325E55CCF00064AE2 /* WeeklyWeatherData.swift */; };
 		CDC0E32F25B364E2007C424B /* TodayWeatherConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */; };
 		CDC0E33225B36942007C424B /* TodayWeatherConditionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC0E33125B36942007C424B /* TodayWeatherConditionCell.swift */; };
 		CDD65B2B25C1EACD005AF01C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD65B2A25C1EACD005AF01C /* NetworkService.swift */; };
@@ -59,6 +60,7 @@
 		CDA305C925BC963100453643 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CDA6CE6B25A9FFED00098611 /* TodayDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailsViewController.swift; sourceTree = "<group>"; };
 		CDA6CE6E25AA000600098611 /* WeeklyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailsViewController.swift; sourceTree = "<group>"; };
+		CDBAFF9325E55CCF00064AE2 /* WeeklyWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherData.swift; sourceTree = "<group>"; };
 		CDC0E32E25B364E2007C424B /* TodayWeatherConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherConditionViewController.swift; sourceTree = "<group>"; };
 		CDC0E33125B36942007C424B /* TodayWeatherConditionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherConditionCell.swift; sourceTree = "<group>"; };
 		CDD65B2A25C1EACD005AF01C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				CDEF62EA25E198430023FBA1 /* Extensions */,
 				CD3A330B25C8A92C00BF9B34 /* WeatherData.swift */,
+				CDBAFF9325E55CCF00064AE2 /* WeeklyWeatherData.swift */,
 				CD778D5C25DFCB05009642F3 /* HourlyWeatherData.swift */,
 				CD778D5F25E00029009642F3 /* TodayWeatherConditionData.swift */,
 			);
@@ -270,6 +273,7 @@
 				CDEF62EC25E1985C0023FBA1 /* StringExtensions.swift in Sources */,
 				CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */,
 				CDD65B2B25C1EACD005AF01C /* NetworkService.swift in Sources */,
+				CDBAFF9425E55CCF00064AE2 /* WeeklyWeatherData.swift in Sources */,
 				CDEF62EF25E198C30023FBA1 /* UIColorExtensions.swift in Sources */,
 				CDA305CA25BC963100453643 /* Router.swift in Sources */,
 				CDC0E33225B36942007C424B /* TodayWeatherConditionCell.swift in Sources */,
