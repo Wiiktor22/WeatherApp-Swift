@@ -21,11 +21,10 @@ class LoadingViewController: UIViewController {
 //        }
     }
     
-    // TODO: Try to refactor some parts of the code to pure function
+    // TODO: Try to refactor some parts of the code
     
     func loadWeatherData() {
-        NetworkService.request(router: .getAllWeatherDataByCoordinates(lat: 54.5189, lon: 18.5319)) {
-            (result: WeatherData) in
+        NetworkService.request(router: .getAllWeatherDataByCoordinates(lat: 54.5189, lon: 18.5319)) { (result: WeatherData) in
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController {
                 if let currentWeatherData = result.current {
                     // TODO: Set proper name and date??
@@ -71,7 +70,7 @@ class LoadingViewController: UIViewController {
                 
                 if let optionalHourlyWeatherData = result.hourly {
                     let hourlyWeatherData = optionalHourlyWeatherData.compactMap { $0 }
-                    vc.hourlyWeatherData = self.prepareHourlyWeatherDataForSubview(hourlyWeatherData)
+                    vc.hourlyWeatherData = HourlyWeatherData.prepareDataFromResponse(hourlyWeatherData)
                 }
                 
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -80,30 +79,6 @@ class LoadingViewController: UIViewController {
                 // TODO: Handle error related to downloading data
                 print("Error while downloading data :(")
             }
-        }
-    }
-    
-    func prepareHourlyWeatherDataForSubview(_ hourlyWeatherData: [CurrentWeatherObject]) -> [HourlyWeatherData] {
-        let slicedHourlyWeatherArray = sliceHourlyWeatherDataArray(hourlyWeatherData)
-        
-        let currentTime = Date()
-        let nextHour = Calendar.current.component(.hour, from: currentTime) + 1
-        
-        return slicedHourlyWeatherArray.enumerated().map { (index, hourlyWeather) -> HourlyWeatherData in
-            if let unitTemp = hourlyWeather.temp, let unitIconCode = hourlyWeather.weather?[0]?.icon {
-                return HourlyWeatherData(temp: unitTemp, iconCode: unitIconCode, hour: nextHour + index)
-            } else {
-                return HourlyWeatherData(temp: 0, iconCode: "01d", hour: 0)
-            }
-        }
-    }
-    
-    func sliceHourlyWeatherDataArray(_ hourlyWeatherData: [CurrentWeatherObject]) -> [CurrentWeatherObject] {
-        if (hourlyWeatherData.count >= 24) {
-            let slicedHourlyWeatherData = Array(hourlyWeatherData[1...23])
-            return slicedHourlyWeatherData
-        } else {
-            return hourlyWeatherData
         }
     }
 }
