@@ -39,16 +39,17 @@ class TodayWeatherConditionViewController: UIViewController, UICollectionViewDel
     func createArrayOfWeatherConditionValues(_ weatherCondition: TodayWeatherConditionData) -> [String] {
         let hour = Calendar.current.component(.hour, from: weatherCondition.sunTime)
         let minute = Calendar.current.component(.minute, from: weatherCondition.sunTime)
-        
+        let minuteString = minute < 10 ? "0\(minute)" : String(minute)
+
         weatherConditionTitles.append(weatherCondition.lastLabelText)
         
         return [
             getTemperatureValue(temperature: weatherCondition.feelsLikeTemp),
             "\(weatherCondition.pressure) hPa",
             "\(weatherCondition.humidity)%",
-            "\(weatherCondition.windSpeed) km/h",
+            String(format: "%.0f km/h", weatherCondition.windSpeed),
             weatherCondition.windDegree,
-            "\(hour):\(minute)"
+            "\(hour):\(minuteString)"
         ]
     }
 
