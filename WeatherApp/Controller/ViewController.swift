@@ -66,7 +66,7 @@ class LoadingViewController: UIViewController {
                     }
                     
                     let convertedDailyWeatherData = dailyWeatherData.compactMap { $0 }
-                    vc.weeklyTemperatureData = self.prepareWeeklyTemperatureData(convertedDailyWeatherData)
+                    vc.weeklyTemperatureData = WeeklyTemperatureData.prepareDataFromResponse(convertedDailyWeatherData)
                 }
                 
                 if let optionalHourlyWeatherData = result.hourly {
@@ -134,17 +134,5 @@ class LoadingViewController: UIViewController {
             sunTime: sunTime ?? Date(),
             lastLabelText: lastLabelText
         )
-    }
-    
-    func prepareWeeklyTemperatureData(_ weatherWeeklyData: [DailyWeatherTempObject]) -> [WeeklyTemperatureData] {
-        let slicedWeatherWeeklyData = weatherWeeklyData[1...7]
-        
-        return slicedWeatherWeeklyData.map { unit in
-            if let dailyTemperature = unit.temp?.day, let dailyTemperatureIcon = unit.weather?[0]?.icon {
-                return WeeklyTemperatureData(temp: getTemperatureValue(temperature: dailyTemperature), iconCode: dailyTemperatureIcon)
-            } else {
-                return WeeklyTemperatureData(temp: "0", iconCode: "0")
-            }
-        }
     }
 }

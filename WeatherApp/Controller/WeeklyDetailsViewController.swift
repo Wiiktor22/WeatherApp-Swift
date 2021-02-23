@@ -16,45 +16,12 @@ class WeeklyDetailsViewController: UIViewController, UICollectionViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defineDaysArray()
+        days = WeeklyTemperatureData.prepareNamesOfDaysArray()
         
         // TODO: Fix styling issues
         
         collectionView.delegate = self
         collectionView.dataSource = self
-    }
-    
-    func defineDaysArray() {
-        let day = Calendar.current.component(.weekday, from: Date())
-        
-        for i in 0...6 {
-            var numberOfTheDay = day + i + 1
-            if numberOfTheDay > 7 {
-                numberOfTheDay -= 7
-            }
-            days.append(getNameOfTheDay(numberOfTheDay))
-        }
-    }
-    
-    func getNameOfTheDay(_ day: Int) -> String {
-        switch day {
-        case 1:
-            return "Niedziela"
-        case 2:
-            return "Poniedziałek"
-        case 3:
-            return "Wtorek"
-        case 4:
-            return "Środa"
-        case 5:
-            return "Czwartek"
-        case 6:
-            return "Piątek"
-        case 7:
-            return "Sobota"
-        default:
-            return "Error"
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
