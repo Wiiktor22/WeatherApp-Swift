@@ -30,7 +30,7 @@ class LoadingViewController: UIViewController {
                 if let currentWeatherData = result.current {
                     // TODO: Set proper name and date??
                     vc.cityAndCountryText = "Gdynia, Polska"
-                    vc.todayWeatherConditionData = self.prepareTodayWeatherConditionData(currentWeatherData)
+                    vc.todayWeatherConditionData = TodayWeatherConditionData.prepareDataFromResponse(currentWeatherData)
                     
                     if let weatherDescription = currentWeatherData.weather {
                         if let description = weatherDescription[0]!.description {
@@ -105,34 +105,5 @@ class LoadingViewController: UIViewController {
         } else {
             return hourlyWeatherData
         }
-    }
-    
-    func prepareTodayWeatherConditionData(_ weatherConditionData: CurrentWeatherObject) -> TodayWeatherConditionData {
-        let currentTime = Date()
-        var sunTime: Date? = nil
-        var lastLabelText: String! = nil
-        
-        if let sunrise = weatherConditionData.sunrise, let sunset = weatherConditionData.sunset {
-            let convertedSunrise = Date(timeIntervalSince1970: TimeInterval(sunrise))
-            let convertedSunset = Date(timeIntervalSince1970: TimeInterval(sunset))
-            
-            if (currentTime > convertedSunrise && currentTime < convertedSunset) {
-                sunTime = convertedSunset
-                lastLabelText = "zachód"
-            } else {
-                sunTime = convertedSunrise
-                lastLabelText = "wschód"
-            }
-        }
-        
-        return TodayWeatherConditionData(
-            feelsLikeTemp: weatherConditionData.feels_like ?? 0,
-            pressure: weatherConditionData.pressure ?? 0,
-            humidity: weatherConditionData.humidity ?? 0,
-            windSpeed: weatherConditionData.wind_speed ?? 0,
-            windDegree: getWindDirection(weatherConditionData.wind_deg ?? 0),
-            sunTime: sunTime ?? Date(),
-            lastLabelText: lastLabelText
-        )
     }
 }
