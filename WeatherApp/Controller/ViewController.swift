@@ -6,25 +6,55 @@
 //
 
 import UIKit
+import CoreLocation
 
-class LoadingViewController: UIViewController {
+class LoadingViewController: UIViewController, CLLocationManagerDelegate {
+    let locationManagerInstance = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManagerInstance.delegate = self
         
-        loadWeatherData()
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-//            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController {
-//                self.navigationController?.pushViewController(vc, animated: true)
-//            }
-//        }
+        if locationManagerInstance.authorizationStatus != .authorizedWhenInUse {
+            locationManagerInstance.requestWhenInUseAuthorization()
+        } else {
+            locationManagerInstance.requestLocation()
+        }
     }
     
-    // TODO: Try to refactor some parts of the code
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if (manager.authorizationStatus == .authorizedWhenInUse) {
+            locationManagerInstance.requestLocation()
+        } else {
+            print("error")
+        }
+    }
     
-    func loadWeatherData() {
-        NetworkService.request(router: .getAllWeatherDataByCoordinates(lat: 54.5189, lon: 18.5319)) { (result: WeatherData) in
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            
+            loadWeatherData(lat: lat, lon: lon)
+        }
+        
+        // TODO: Define error?
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if (manager.authorizationStatus == .notDetermined) {
+            print("Dont know yet")
+            return
+        } else if (manager.authorizationStatus == .denied) {
+            print("Denied")
+            return
+        }
+    }
+    
+    // TODO: Try to refactor some parts of the code, move this function away from this VC
+    
+    func loadWeatherData(lat: Double, lon: Double) {
+        NetworkService.request(router: .getAllWeatherDataByCoordinates(lat: lat, lon: lon)) { (result: WeatherData) in
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController {
                 if let currentWeatherData = result.current {
                     // TODO: Set proper name and date??
