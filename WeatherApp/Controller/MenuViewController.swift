@@ -7,12 +7,15 @@
 
 import UIKit
 
-class MenuViewController: UITableViewController {
+class MenuViewController: UITableViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var cityNameInput: UITextField!
     let testCities = ["Gdynia", "Gdańsk", "Sopot"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cityNameInput.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,7 +23,30 @@ class MenuViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    //MARK: - Search logic
+    
+    func checkIfTextIsNotEmpty(providedText: String) -> Bool {
+        if (providedText.isEmpty) {
+            return false
+        } else {
+            cityNameInput.endEditing(true)
+            return true
+        }
+    }
 
+    @IBAction func handleSearchPress(_ sender: UIButton) {
+        checkIfTextIsNotEmpty(providedText: cityNameInput.text!)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return checkIfTextIsNotEmpty(providedText: cityNameInput.text!)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkIfTextIsNotEmpty(providedText: textField.text!)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
