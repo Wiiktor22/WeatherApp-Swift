@@ -57,8 +57,9 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         NetworkService.request(router: .getAllWeatherDataByCoordinates(lat: lat, lon: lon)) { (result: WeatherData) in
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController {
                 if let currentWeatherData = result.current {
-                    // TODO: Set proper name and date??
-                    vc.cityAndCountryText = "Gdynia, Polska"
+                    CityName.getCityName(lat: lat, lon: lon) { (result: String) in
+                        vc.cityAndCountryText = result
+                    }
                     vc.todayWeatherConditionData = TodayWeatherConditionData.prepareDataFromResponse(currentWeatherData)
                     
                     if let weatherDescription = currentWeatherData.weather {

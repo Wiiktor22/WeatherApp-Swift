@@ -21,7 +21,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var maxTemperatureLabel: UILabel!
     @IBOutlet weak var currentWeatherIcon: UIImageView!
     
-    var cityAndCountryText: String! = nil
+    var cityAndCountryText: String! = nil {
+        didSet {
+            cityAndCountryLabel.text = cityAndCountryText
+        }
+    }
     var weatherDescriptionText: String! = nil
     var actualTemperatureText: String! = nil
     var minTemperatureText: String! = nil
@@ -38,7 +42,6 @@ class MainViewController: UIViewController {
     }
     
     func setValuesIntoLabels() {
-        cityAndCountryLabel.text = cityAndCountryText
         weatherDescriptionLabel.text = weatherDescriptionText
         actualTemperatureLabel.text = actualTemperatureText
         minTemperatureLabel.text = minTemperatureText

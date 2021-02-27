@@ -10,6 +10,7 @@ import Foundation
 enum Router {
     
     case getAllWeatherDataByCoordinates(lat: Double, lon: Double)
+    case getCityNameByCoordinates(lat: Double, lon: Double)
     
     var scheme: String {
         return "https"
@@ -24,6 +25,8 @@ enum Router {
         switch self {
         case .getAllWeatherDataByCoordinates:
             return defaultStartOfPath + "/onecall"
+        case .getCityNameByCoordinates:
+            return "/geo/1.0/reverse"
         }
     }
     
@@ -39,6 +42,13 @@ enum Router {
                 URLQueryItem(name: "lat", value: String(lat)),
                 URLQueryItem(name: "lon", value: String(lon)),
                 URLQueryItem(name: "exclude", value: "minutely")
+            ]
+        case .getCityNameByCoordinates(let lat, let lon):
+            return [
+                URLQueryItem(name: "appid", value: apiKey),
+                URLQueryItem(name: "limit", value: String(1)),
+                URLQueryItem(name: "lat", value: String(lat)),
+                URLQueryItem(name: "lon", value: String(lon))
             ]
         }
     }
