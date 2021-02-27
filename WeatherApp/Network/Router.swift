@@ -11,6 +11,7 @@ enum Router {
     
     case getAllWeatherDataByCoordinates(lat: Double, lon: Double)
     case getCityNameByCoordinates(lat: Double, lon: Double)
+    case getCoordinatesByCityName(city: String)
     
     var scheme: String {
         return "https"
@@ -22,17 +23,23 @@ enum Router {
     
     var path: String {
         let defaultStartOfPath = "/data/2.5"
+        let geocodingStartOfPath = "/geo/1.0"
+        
         switch self {
         case .getAllWeatherDataByCoordinates:
             return defaultStartOfPath + "/onecall"
         case .getCityNameByCoordinates:
-            return "/geo/1.0/reverse"
+            return geocodingStartOfPath + "/reverse"
+        case .getCoordinatesByCityName:
+            return geocodingStartOfPath + "/direct"
         }
     }
     
     var parameters: [URLQueryItem] {
-        let defaultParameters: [URLQueryItem] = [
-            URLQueryItem(name: "appid", value: apiKey),
+        let apiKeyParameter: [URLQueryItem] = [
+            URLQueryItem(name: "appid", value: apiKey)
+        ]
+        let defaultParameters: [URLQueryItem] = apiKeyParameter + [
             URLQueryItem(name: "units", value: "metric"),
             URLQueryItem(name: "lang", value: "pl")
         ]
@@ -44,11 +51,15 @@ enum Router {
                 URLQueryItem(name: "exclude", value: "minutely")
             ]
         case .getCityNameByCoordinates(let lat, let lon):
-            return [
-                URLQueryItem(name: "appid", value: apiKey),
+            return apiKeyParameter + [
                 URLQueryItem(name: "limit", value: String(1)),
                 URLQueryItem(name: "lat", value: String(lat)),
                 URLQueryItem(name: "lon", value: String(lon))
+            ]
+        case .getCoordinatesByCityName(let city):
+            return apiKeyParameter + [
+                URLQueryItem(name: "limit", value: String(1)),
+                URLQueryItem(name: "q", value: String(city))
             ]
         }
     }
