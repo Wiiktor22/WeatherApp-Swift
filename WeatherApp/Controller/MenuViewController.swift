@@ -34,17 +34,36 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
             return true
         }
     }
-
-    @IBAction func handleSearchPress(_ sender: UIButton) {
-        checkIfTextIsNotEmpty(providedText: cityNameInput.text!)
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return checkIfTextIsNotEmpty(providedText: cityNameInput.text!)
     }
+
+    @IBAction func handleSearchPress(_ sender: UIButton) {
+        if checkIfTextIsNotEmpty(providedText: cityNameInput.text!) {
+            searchCity(city: cityNameInput.text!)
+        }
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        checkIfTextIsNotEmpty(providedText: textField.text!)
+        if checkIfTextIsNotEmpty(providedText: textField.text!) {
+            searchCity(city: cityNameInput.text!)
+        }
+    }
+    
+    func searchCity(city: String) {
+        Geocoding.getGeocodingObject(city: city) { (result: Geocoding?) in
+            if (result != nil) {
+                
+            } else {
+                let message = "Nie znaleziono miasta: \(city)"
+                let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true) { [weak self] in
+                    self?.cityNameInput.text! = ""
+                }
+            }
+        }
     }
     
     // MARK: - Table view data source

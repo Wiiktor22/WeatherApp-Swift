@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var maxTemperatureLabel: UILabel!
     @IBOutlet weak var currentWeatherIcon: UIImageView!
     
-    var cityAndCountryText: String! = nil {
+    var cityAndCountryText: String = "" {
         didSet {
             cityAndCountryLabel.text = cityAndCountryText
         }
