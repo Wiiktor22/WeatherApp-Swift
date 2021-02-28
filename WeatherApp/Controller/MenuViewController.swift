@@ -9,19 +9,28 @@ import UIKit
 
 class MenuViewController: UITableViewController, UITextFieldDelegate {
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var userLocations = [UserLocation]()
+    
     @IBOutlet weak var cityNameInput: UITextField!
-    let testCities = ["Gdynia", "Gdańsk", "Sopot"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         cityNameInput.delegate = self
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        fetchUserLocations()
+    }
+    
+    func fetchUserLocations() {
+        do {
+            try self.userLocations = context.fetch(UserLocation.fetchRequest())
+        } catch  {
+            print("Error while fetching")
+        }
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     //MARK: - Search logic
@@ -41,7 +50,7 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
 
     @IBAction func handleSearchPress(_ sender: UIButton) {
         if checkIfTextIsNotEmpty(providedText: cityNameInput.text!) {
-            searchCity(city: cityNameInput.text!)
+            cityNameInput.endEditing(true)
         }
     }
     
@@ -54,6 +63,19 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
     func searchCity(city: String) {
         Geocoding.getGeocodingObject(city: city) { (result: Geocoding?) in
             if (result != nil) {
+                let newLocation = UserLocation(context: self.context)
+                newLocation.city = result?.name ?? ""
+                newLocation.country = result?.country ?? ""
+                newLocation.lat = result?.lat ?? 0
+                newLocation.lon = result?.lon ?? 0
+                
+                do {
+                    try self.context.save()
+                } catch {
+                    print("Error while saving")
+                }
+                
+                self.fetchUserLocations()
                 
             } else {
                 let message = "Nie znaleziono miasta: \(city)"
@@ -69,23 +91,36 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return testCities.count
+        return userLocations.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CityItem", for: indexPath) as! CityItemCell
         
-        cell.cityName.text = testCities[indexPath.row]
+        cell.cityName.text = userLocations[indexPath.row].city
 
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let locationToRemove = userLocations[indexPath.row]
+            
+            self.context.delete(locationToRemove)
+            do {
+                try self.context.save()
+            } catch {
+                print("Error while deleting")
+            }
+            
+            fetchUserLocations()
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
