@@ -51,6 +51,8 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func unwindToLoadView(_ sender: UIStoryboardSegue) {}
+    
     // TODO: Try to refactor some parts of the code, move this function away from this VC
     
     func loadWeatherData(lat: Double, lon: Double) {

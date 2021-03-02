@@ -8,8 +8,8 @@
 import UIKit
 
 class CityItemCell: UITableViewCell {
-
-    @IBOutlet weak var cityName: UILabel!
+    
+    @IBOutlet weak var cityNameButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -302,25 +302,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miasto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13W-hh-c5i">
-                                            <rect key="frame" x="35" y="19" width="105" height="22"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cO-8c-doH">
+                                            <rect key="frame" x="35" y="13.5" width="250" height="33"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="G8j-A8-2tP"/>
+                                                <constraint firstAttribute="width" constant="250" id="vmh-kk-HAJ"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                            <state key="normal" title="Miasto">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="s8P-9R-vYV" kind="unwind" unwindAction="unwindToLoadView:" id="eV8-K5-6PN"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="13W-hh-c5i" firstAttribute="leading" secondItem="75T-yT-0ei" secondAttribute="leadingMargin" constant="15" id="GEF-JI-kBt"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="13W-hh-c5i" secondAttribute="trailing" constant="20" symbolic="YES" id="iRh-Ja-R3f"/>
-                                        <constraint firstItem="13W-hh-c5i" firstAttribute="centerY" secondItem="75T-yT-0ei" secondAttribute="centerY" id="ws1-qF-LMr"/>
+                                        <constraint firstItem="7cO-8c-doH" firstAttribute="centerY" secondItem="75T-yT-0ei" secondAttribute="centerY" id="Jl2-nk-jON"/>
+                                        <constraint firstItem="7cO-8c-doH" firstAttribute="leading" secondItem="75T-yT-0ei" secondAttribute="leadingMargin" constant="15" id="Td8-Vr-FaG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.31448578830000001" green="0.65511316060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="cityName" destination="13W-hh-c5i" id="cq2-1U-b0u"/>
+                                    <outlet property="cityNameButton" destination="7cO-8c-doH" id="00z-mN-Qhp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -335,6 +338,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ana-Cs-Fgo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="s8P-9R-vYV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2815.9420289855075" y="118.52678571428571"/>
         </scene>
