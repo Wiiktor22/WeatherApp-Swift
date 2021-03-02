@@ -30,7 +30,7 @@ class TodayDetailsViewController: UIViewController, UICollectionViewDataSource, 
         
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = false
-        cell.layer.shadowColor = UIColor(hex: "#d6d6d6", alpha: 1).cgColor
+        cell.layer.shadowColor = UIColor(named: "ShadowColor")?.cgColor ?? UIColor(hex: "#d6d6d6", alpha: 1).cgColor
         cell.layer.shadowOpacity = 0.6
         cell.layer.shadowOffset = .zero
         cell.layer.shadowRadius = 5
