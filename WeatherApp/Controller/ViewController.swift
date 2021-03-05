@@ -10,7 +10,8 @@ import CoreLocation
 
 class LoadingViewController: UIViewController, CLLocationManagerDelegate {
     let locationManagerInstance = CLLocationManager()
-
+    @IBOutlet weak var sunLogo: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManagerInstance.delegate = self
@@ -20,6 +21,11 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             locationManagerInstance.requestLocation()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        sunLogo.rotate()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -110,7 +116,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
                     vc.hourlyWeatherData = HourlyWeatherData.prepareDataFromResponse(hourlyWeatherData)
                 }
                 
-                self.navigationController?.pushViewController(vc, animated: true)
+                //self.navigationController?.pushViewController(vc, animated: true)
                 
             } else {
                 // TODO: Handle error related to downloading data
