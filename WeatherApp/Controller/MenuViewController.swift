@@ -76,6 +76,7 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
                 }
                 
                 self.fetchUserLocations()
+                self.cityNameInput.text! = ""
                 
             } else {
                 let message = "Nie znaleziono miasta: \(city)"

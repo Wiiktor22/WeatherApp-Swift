@@ -53,6 +53,10 @@ class MainViewController: UIViewController {
         maxTemperatureLabel.text = maxTemperatureText
     }
     
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - SUBVIEWS
     
     var hourlyWeatherData: [HourlyWeatherData]! = nil

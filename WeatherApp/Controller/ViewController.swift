@@ -53,6 +53,10 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func unwindToLoadView(_ sender: UIStoryboardSegue) {}
     
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // TODO: Try to refactor some parts of the code, move this function away from this VC
     
     func loadWeatherData(lat: Double, lon: Double) {
