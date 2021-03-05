@@ -25,7 +25,7 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
         do {
             try self.userLocations = context.fetch(UserLocation.fetchRequest())
         } catch  {
-            print("Error while fetching")
+            Alert.presentCoreDataErrorAlert(on: self)
         }
         
         DispatchQueue.main.async {
@@ -72,7 +72,7 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
                 do {
                     try self.context.save()
                 } catch {
-                    print("Error while saving")
+                    Alert.presentCoreDataErrorAlert(on: self)
                 }
                 
                 self.fetchUserLocations()
@@ -115,9 +115,8 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
             do {
                 try self.context.save()
             } catch {
-                print("Error while deleting")
+                Alert.presentCoreDataErrorAlert(on: self)
             }
-            
             fetchUserLocations()
         }
     }

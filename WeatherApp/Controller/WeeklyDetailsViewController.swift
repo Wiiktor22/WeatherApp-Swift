@@ -33,7 +33,7 @@ class WeeklyDetailsViewController: UIViewController, UICollectionViewDataSource,
         
         cell.dayOfAWeek.text = days[indexPath.item]
         cell.temperature.text = dailyTemperature[indexPath.item].temp
-        cell.weatherIcon.image = UIImage(named: getIconName(iconCode: dailyTemperature[indexPath.item].iconCode))
+        cell.weatherIcon.image = UIImage(named: Utils.getIconName(iconCode: dailyTemperature[indexPath.item].iconCode))
         
         // TODO: Check width of the cell
         

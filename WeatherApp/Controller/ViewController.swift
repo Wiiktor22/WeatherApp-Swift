@@ -46,16 +46,13 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
             let lon = location.coordinate.longitude
             
             loadWeatherData(lat: lat, lon: lon)
+        } else {
+            Alert.presentDownloadingErrorAlert(on: self)
         }
-        
-        // TODO: Define error?
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        if (manager.authorizationStatus == .notDetermined) {
-            print("Dont know yet")
-            return
-        } else if (manager.authorizationStatus == .denied) {
+        if (manager.authorizationStatus == .denied) {
             loadWeatherFromUserLocationCity()
         }
     }
@@ -66,17 +63,16 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
             let location = savedLocation.first
             loadWeatherData(lat: location?.lat ?? 0, lon: location?.lon ?? 0)
         } else {
-            print("Nie ma lokalizacji")
+            Alert.presentOpenLocationSettingsAlert(on: self)
         }
     }
     
     @IBAction func unwindToLoadView(_ sender: UIStoryboardSegue) {}
-    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
     
-    // TODO: Try to refactor some parts of the code, move this function away from this VC
+    // MARK: - Load weather logic
     
     func loadWeatherData(lat: Double, lon: Double) {
         NetworkService.request(router: .getAllWeatherDataByCoordinates(lat: lat, lon: lon)) { (result: WeatherData) in
@@ -95,26 +91,25 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
                         }
                         
                         if let iconCode = weatherDescription[0]?.icon {
-                            vc.iconCode = getIconName(iconCode: iconCode)
+                            vc.iconCode = Utils.getIconName(iconCode: iconCode)
                         } else {
                             vc.iconCode = "01d"
                         }
                     } else {
-                        print("There is no weatherDescription object...")
+                        Alert.presentDownloadingErrorAlert(on: self)
                     }
                     
                     if let actualTemperatute = currentWeatherData.temp {
-                        vc.actualTemperatureText = getTemperatureValue(temperature: actualTemperatute)
+                        vc.actualTemperatureText = Utils.getTemperatureValue(temperature: actualTemperatute)
                     } else {
                         vc.actualTemperatureText = "-- °C"
                     }
-                    
                 }
                 
                 if let dailyWeatherData = result.daily {
                     if let minTemperature = dailyWeatherData[0]?.temp?.min, let maxTemperature = dailyWeatherData[0]?.temp?.max {
-                        vc.minTemperatureText = getTemperatureValue(temperature: minTemperature)
-                        vc.maxTemperatureText = getTemperatureValue(temperature: maxTemperature)
+                        vc.minTemperatureText = Utils.getTemperatureValue(temperature: minTemperature)
+                        vc.maxTemperatureText = Utils.getTemperatureValue(temperature: maxTemperature)
                     } else {
                         vc.maxTemperatureText = "-- °C"
                         vc.maxTemperatureText = "-- °C"
@@ -132,8 +127,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             } else {
-                // TODO: Handle error related to downloading data
-                print("Error while downloading data :(")
+                Alert.presentDownloadingErrorAlert(on: self)
             }
         }
     }

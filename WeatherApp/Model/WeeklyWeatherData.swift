@@ -16,7 +16,7 @@ struct WeeklyTemperatureData {
         
         return slicedWeatherWeeklyData.map { unit in
             if let dailyTemperature = unit.temp?.day, let dailyTemperatureIcon = unit.weather?[0]?.icon {
-                return WeeklyTemperatureData(temp: getTemperatureValue(temperature: dailyTemperature), iconCode: dailyTemperatureIcon)
+                return WeeklyTemperatureData(temp: Utils.getTemperatureValue(temperature: dailyTemperature), iconCode: dailyTemperatureIcon)
             } else {
                 return WeeklyTemperatureData(temp: "0", iconCode: "0")
             }

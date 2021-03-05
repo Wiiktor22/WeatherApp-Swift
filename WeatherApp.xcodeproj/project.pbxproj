@@ -13,6 +13,7 @@
 		CD3A330C25C8A92C00BF9B34 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3A330B25C8A92C00BF9B34 /* WeatherData.swift */; };
 		CD47BEBB25EC11E200062511 /* Geocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47BEBA25EC11E200062511 /* Geocoding.swift */; };
 		CD61EB6225F29EA7001447D4 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61EB6125F29EA7001447D4 /* UIImageViewExtensions.swift */; };
+		CD61EB6C25F2AD27001447D4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61EB6B25F2AD27001447D4 /* Alert.swift */; };
 		CD778D5D25DFCB05009642F3 /* HourlyWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD778D5C25DFCB05009642F3 /* HourlyWeatherData.swift */; };
 		CD778D6025E00029009642F3 /* TodayWeatherConditionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD778D5F25E00029009642F3 /* TodayWeatherConditionData.swift */; };
 		CD994DDD25AB0DAC0031AC5C /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */; };
@@ -46,6 +47,7 @@
 		CD3A330B25C8A92C00BF9B34 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		CD47BEBA25EC11E200062511 /* Geocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoding.swift; sourceTree = "<group>"; };
 		CD61EB6125F29EA7001447D4 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		CD61EB6B25F2AD27001447D4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CD778D5C25DFCB05009642F3 /* HourlyWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherData.swift; sourceTree = "<group>"; };
 		CD778D5F25E00029009642F3 /* TodayWeatherConditionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherConditionData.swift; sourceTree = "<group>"; };
 		CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
@@ -85,14 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD1513BC25D837B5001B1EB1 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				CD1513BD25D837DD001B1EB1 /* Utils.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		CD77938E25C5EBB900D936C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +97,7 @@
 				CD778D5F25E00029009642F3 /* TodayWeatherConditionData.swift */,
 				CD1543AF25E97BEB00ADDFD2 /* CityName.swift */,
 				CD47BEBA25EC11E200062511 /* Geocoding.swift */,
+				CD1513BD25D837DD001B1EB1 /* Utils.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,7 +126,6 @@
 				CD77938E25C5EBB900D936C0 /* Model */,
 				CDA305C825BC95EC00453643 /* Network */,
 				CDA305C625BC950700453643 /* View */,
-				CD1513BC25D837B5001B1EB1 /* Utils */,
 				CD9C45D925A5FA6E00706C49 /* AppDelegate.swift */,
 				CD9C45DB25A5FA6E00706C49 /* SceneDelegate.swift */,
 				CD9C45DF25A5FA6E00706C49 /* Main.storyboard */,
@@ -168,6 +162,7 @@
 		CDA305C625BC950700453643 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD61EB6B25F2AD27001447D4 /* Alert.swift */,
 				CDA305C225BC889E00453643 /* CityItemCell.swift */,
 				CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */,
 				CD0A9E6125B45D41005FDC75 /* DailyWeatherCell.swift */,
@@ -285,6 +280,7 @@
 				CDA6CE6F25AA000600098611 /* WeeklyDetailsViewController.swift in Sources */,
 				CDD65B2B25C1EACD005AF01C /* NetworkService.swift in Sources */,
 				CDBAFF9425E55CCF00064AE2 /* WeeklyWeatherData.swift in Sources */,
+				CD61EB6C25F2AD27001447D4 /* Alert.swift in Sources */,
 				CD61EB6225F29EA7001447D4 /* UIImageViewExtensions.swift in Sources */,
 				CDEF62EF25E198C30023FBA1 /* UIColorExtensions.swift in Sources */,
 				CDA305CA25BC963100453643 /* Router.swift in Sources */,

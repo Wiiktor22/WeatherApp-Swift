@@ -16,6 +16,31 @@ struct TodayWeatherConditionData: Codable {
     var sunTime: Date
     var lastLabelText: String
     
+    private static func getWindDirection(_ windDegree: Int) -> String {
+        if (windDegree ~= windDegree) {
+            switch windDegree {
+                case 23...66:
+                    return "NE"
+                case 67...112:
+                    return "E"
+                case 113...158:
+                    return "SE"
+                case 159...204:
+                    return "S"
+                case 205...250:
+                    return "SW"
+                case 251...296:
+                    return "W"
+                case 297...338:
+                    return "NW"
+                default:
+                    return "N"
+            }
+        } else {
+            return "Error"
+        }
+    }
+    
     static func prepareDataFromResponse(_ weatherConditionData: CurrentWeatherObject) -> TodayWeatherConditionData {
         let currentTime = Date()
         var sunTime: Date? = nil

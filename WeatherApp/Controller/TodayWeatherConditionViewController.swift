@@ -44,7 +44,7 @@ class TodayWeatherConditionViewController: UIViewController, UICollectionViewDel
         weatherConditionTitles.append(weatherCondition.lastLabelText)
         
         return [
-            getTemperatureValue(temperature: weatherCondition.feelsLikeTemp),
+            Utils.getTemperatureValue(temperature: weatherCondition.feelsLikeTemp),
             "\(weatherCondition.pressure) hPa",
             "\(weatherCondition.humidity)%",
             String(format: "%.0f km/h", weatherCondition.windSpeed),

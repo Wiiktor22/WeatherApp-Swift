@@ -19,13 +19,7 @@ struct WeatherData: Codable {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         var savedLocation = [UserLocation]()
-        do {
-            try savedLocation = context.fetch(UserLocation.fetchRequest())
-            print(savedLocation)
-            print("Model")
-        } catch  {
-            print("Error while fetching")
-        }
+        try? savedLocation = context.fetch(UserLocation.fetchRequest())
         return savedLocation
     }
 }
