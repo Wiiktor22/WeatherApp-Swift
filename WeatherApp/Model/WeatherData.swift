@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct WeatherData: Codable {
     var lat: Double?
@@ -13,6 +14,20 @@ struct WeatherData: Codable {
     var current: CurrentWeatherObject?
     var hourly: [CurrentWeatherObject?]?
     var daily: [DailyWeatherTempObject?]?
+    
+    static func lookForSavedUserLocation() -> [UserLocation] {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        var savedLocation = [UserLocation]()
+        do {
+            try savedLocation = context.fetch(UserLocation.fetchRequest())
+            print(savedLocation)
+            print("Model")
+        } catch  {
+            print("Error while fetching")
+        }
+        return savedLocation
+    }
 }
 
 struct CurrentWeatherObject: Codable {

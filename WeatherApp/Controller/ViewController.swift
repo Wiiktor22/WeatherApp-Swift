@@ -16,10 +16,12 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         locationManagerInstance.delegate = self
         
-        if locationManagerInstance.authorizationStatus != .authorizedWhenInUse {
-            locationManagerInstance.requestWhenInUseAuthorization()
-        } else {
+        if locationManagerInstance.authorizationStatus == .authorizedWhenInUse {
             locationManagerInstance.requestLocation()
+        } else if locationManagerInstance.authorizationStatus == .denied {
+            loadWeatherFromUserLocationCity()
+        } else {
+            locationManagerInstance.requestWhenInUseAuthorization()
         }
     }
     
@@ -28,11 +30,13 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         sunLogo.rotate()
     }
     
+    // MARK: - Location logic
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if (manager.authorizationStatus == .authorizedWhenInUse) {
             locationManagerInstance.requestLocation()
         } else {
-            print("error")
+            loadWeatherFromUserLocationCity()
         }
     }
     
@@ -52,8 +56,17 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
             print("Dont know yet")
             return
         } else if (manager.authorizationStatus == .denied) {
-            print("Denied")
-            return
+            loadWeatherFromUserLocationCity()
+        }
+    }
+    
+    func loadWeatherFromUserLocationCity() {
+        let savedLocation = WeatherData.lookForSavedUserLocation()
+        if !savedLocation.isEmpty {
+            let location = savedLocation.first
+            loadWeatherData(lat: location?.lat ?? 0, lon: location?.lon ?? 0)
+        } else {
+            print("Nie ma lokalizacji")
         }
     }
     
@@ -116,7 +129,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
                     vc.hourlyWeatherData = HourlyWeatherData.prepareDataFromResponse(hourlyWeatherData)
                 }
                 
-                //self.navigationController?.pushViewController(vc, animated: true)
+                self.navigationController?.pushViewController(vc, animated: true)
                 
             } else {
                 // TODO: Handle error related to downloading data
