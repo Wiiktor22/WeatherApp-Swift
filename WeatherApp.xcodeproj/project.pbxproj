@@ -122,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				CDA305C525BC94C900453643 /* Controller */,
-				CD9C45F225A5FD5F00706C49 /* Fonts */,
 				CD77938E25C5EBB900D936C0 /* Model */,
 				CDA305C825BC95EC00453643 /* Network */,
 				CDA305C625BC950700453643 /* View */,
@@ -162,6 +161,7 @@
 		CDA305C625BC950700453643 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD9C45F225A5FD5F00706C49 /* Fonts */,
 				CD61EB6B25F2AD27001447D4 /* Alert.swift */,
 				CDA305C225BC889E00453643 /* CityItemCell.swift */,
 				CD994DDC25AB0DAC0031AC5C /* HourlyWeatherCell.swift */,

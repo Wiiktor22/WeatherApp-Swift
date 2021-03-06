@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
     var maxTemperatureText: String! = nil
     var iconCode: String! = nil
     
+    var selectedLocation: Geocoding! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsContainer.layer.cornerRadius = 15
@@ -88,6 +90,11 @@ class MainViewController: UIViewController {
         } else if (segue.identifier == "WeeklyDetailsSegue") {
             let destVC = segue.destination as! WeeklyDetailsViewController
             destVC.dailyTemperature = weeklyTemperatureData
+        } else if ((sender as? UIButton)?.restorationIdentifier == "refresh") {
+            if let lat = selectedLocation.lat, let lon = selectedLocation.lon {
+                let destVC = segue.destination as! LoadingViewController
+                destVC.loadWeatherData(lat: lat, lon: lon)
+            }
         }
     }
 

@@ -82,6 +82,7 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
                         vc.cityAndCountryText = result
                     }
                     vc.todayWeatherConditionData = TodayWeatherConditionData.prepareDataFromResponse(currentWeatherData)
+                    vc.selectedLocation = Geocoding(name: nil, lat: lat, lon: lon, country: nil)
                     
                     if let weatherDescription = currentWeatherData.weather {
                         if let description = weatherDescription[0]!.description {
