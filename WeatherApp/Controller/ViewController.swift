@@ -78,7 +78,6 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
         NetworkService.request(router: .getAllWeatherDataByCoordinates(lat: lat, lon: lon)) { (result: WeatherData) in
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController {
                 if let currentWeatherData = result.current {
-                    print("----------------\(cityName)")
                     if (cityName != nil) {
                         vc.cityAndCountryText = cityName!
                     } else {
