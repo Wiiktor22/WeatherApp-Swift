@@ -54,8 +54,8 @@ class MainViewController: UIViewController {
     
     func getCurrentTimeForLabel() -> String {
         let now = Date()
-        let minute = Calendar.current.component(.minute, from: now)
-        let hour = Calendar.current.component(.hour, from: now)
+        let minute = Calendar.current.component(.minute, from: now) > 10 ? String(Calendar.current.component(.minute, from: now)) : "0\(Calendar.current.component(.minute, from: now))"
+        let hour = Calendar.current.component(.hour, from: now) > 10 ? String(Calendar.current.component(.hour, from: now)) : "0\(Calendar.current.component(.hour, from: now))"
         return "\(hour):\(minute)"
     }
     
