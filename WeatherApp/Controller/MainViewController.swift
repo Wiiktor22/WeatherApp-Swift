@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
     var maxTemperatureText: String! = nil
     var iconCode: String! = nil
     
+    @IBOutlet weak var lastUpdateLabel: UILabel!
     var selectedLocation: Geocoding! = nil
     
     override func viewDidLoad() {
@@ -43,16 +44,19 @@ class MainViewController: UIViewController {
         currentWeatherIcon.image = UIImage(named: iconCode)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        cityAndCountryLabel.text = cityAndCountryText
-    }
-    
     func setValuesIntoLabels() {
         weatherDescriptionLabel.text = weatherDescriptionText
         actualTemperatureLabel.text = actualTemperatureText
         minTemperatureLabel.text = minTemperatureText
         maxTemperatureLabel.text = maxTemperatureText
+        lastUpdateLabel.text = "Ostatnia aktualizacja: \(getCurrentTimeForLabel())"
+    }
+    
+    func getCurrentTimeForLabel() -> String {
+        let now = Date()
+        let minute = Calendar.current.component(.minute, from: now)
+        let hour = Calendar.current.component(.hour, from: now)
+        return "\(hour):\(minute)"
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
