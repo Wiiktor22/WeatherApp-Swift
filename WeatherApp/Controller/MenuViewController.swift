@@ -128,9 +128,13 @@ class MenuViewController: UITableViewController, UITextFieldDelegate {
                 let chosenLocation = userLocations.first(where: { $0.city == chosenCityName })
                 let lat = chosenLocation?.lat ?? 0
                 let lon = chosenLocation?.lon ?? 0
+                var cityName = ""
+                if let city = chosenLocation?.city, let country = chosenLocation?.country {
+                    cityName = "\(city), \(country)"
+                }
                 
                 let destVC = segue.destination as! LoadingViewController
-                destVC.loadWeatherData(lat: lat, lon: lon)
+                destVC.loadWeatherData(lat: lat, lon: lon, cityName: cityName)
             }
         }
     }

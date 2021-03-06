@@ -74,13 +74,19 @@ class LoadingViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Load weather logic
     
-    func loadWeatherData(lat: Double, lon: Double) {
+    func loadWeatherData(lat: Double, lon: Double, cityName: String? = nil) {
         NetworkService.request(router: .getAllWeatherDataByCoordinates(lat: lat, lon: lon)) { (result: WeatherData) in
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController {
                 if let currentWeatherData = result.current {
-                    CityName.getCityName(lat: lat, lon: lon) { (result: String) in
-                        vc.cityAndCountryText = result
+                    print("----------------\(cityName)")
+                    if (cityName != nil) {
+                        vc.cityAndCountryText = cityName!
+                    } else {
+                        CityName.getCityName(lat: lat, lon: lon) { (result: String) in
+                            vc.cityAndCountryText = result
+                        }
                     }
+                    
                     vc.todayWeatherConditionData = TodayWeatherConditionData.prepareDataFromResponse(currentWeatherData)
                     vc.selectedLocation = Geocoding(name: nil, lat: lat, lon: lon, country: nil)
                     
